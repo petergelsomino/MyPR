@@ -1,5 +1,5 @@
 //
-//  DashboardTableViewController.swift
+//  RecordLiftTableViewController.swift
 //  MyPR
 //
 //  Created by Peter Gelsomino on 8/23/18.
@@ -7,32 +7,39 @@
 //
 
 import UIKit
-import os.log
 
-class DashboardTableViewController: UITableViewController {
+
+class RecordLiftTableViewController: UITableViewController {
     
-    var lifts = [LiftCell]()
-    
-    private func loadSampleLifts() {
-        let photo1 = UIImage(named: "backSquat")
-        
-        guard let lift1 = LiftCell(name: "Back Squat", maxLift: 175, liftImage: photo1!, liftDate: "5/6/2018") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        lifts += [lift1]
-        
+    //MARK Properties
+    @IBOutlet weak var chosenLift: UILabel!
+    @IBOutlet weak var poundsSelected: UILabel!
+    @IBOutlet weak var dateSelected: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBAction func dateChanged(_ sender: Any) {
+        dateSelected.text = "\(datePicker.date)"
     }
-
+    
+    //MARK: Actions
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToRecordLift(segue:UIStoryboardSegue) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleLifts()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.chosenLift.text = self.chosenLift.text
+        
+        datePicker.datePickerMode = .date
+        datePicker.date = Date()
+        dateSelected.text = "\(datePicker.date)"
+        datePicker.isHidden = true
+    
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        dateSelected.text = dateFormatter.string(from: datePicker.date)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,33 +55,34 @@ class DashboardTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return lifts.count
+        return 5
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
-
-        let liftcell = lifts[indexPath.row]
-
-        cell.liftLabel.text = liftcell.name
-        cell.maxLiftLabel.text = "\(liftcell.maxLift) LBS"
-        cell.liftImage.image = liftcell.liftImage
-        cell.liftDate.text = liftcell.liftDate
-        
-        // Get the cell to wrap
-        cell.liftLabel.contentMode = .scaleToFill
-        cell.liftLabel.numberOfLines = 0
-
-        return cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dateIndexPath = IndexPath(row: 0, section: 0)
+        if dateIndexPath == indexPath {
+            datePicker.isHidden = !datePicker.isHidden
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.tableView.beginUpdates()
+                // apple bug fix - some TV lines hide after animation
+                self.tableView.deselectRow(at: indexPath, animated: true)
+                self.tableView.endUpdates()
+            })
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let height:CGFloat = datePicker.isHidden ? 0.0 : 216.0
+            return height
+        }
+        return super.tableView(tableView, heightForRowAt: indexPath)
     }
- 
+    
+
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    }
+
 
     /*
     // Override to support conditional editing of the table view.
