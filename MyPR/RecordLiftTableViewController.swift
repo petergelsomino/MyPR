@@ -9,22 +9,27 @@
 import UIKit
 
 
-class RecordLiftTableViewController: UITableViewController {
+class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var pickerData: [String] = [String]()
+
     
     //MARK Properties
     @IBOutlet weak var chosenLift: UILabel!
     @IBOutlet weak var poundsSelected: UILabel!
     @IBOutlet weak var dateSelected: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBAction func dateChanged(_ sender: Any) {
-        dateSelected.text = "\(datePicker.date)"
-    }
+    @IBOutlet weak var poundsPicker: UIPickerView!
     
     //MARK: Actions
+    @IBAction func dateChanged(_ sender: Any) {
+        let formattedDate = formatDate(datePicker: datePicker)
+        dateSelected.text = "\(formattedDate)"
+    }
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+    // Cancel button is tapped
     @IBAction func unwindToRecordLift(segue:UIStoryboardSegue) {
     }
     
@@ -36,10 +41,15 @@ class RecordLiftTableViewController: UITableViewController {
         datePicker.date = Date()
         dateSelected.text = "\(datePicker.date)"
         datePicker.isHidden = true
-    
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy"
-        dateSelected.text = dateFormatter.string(from: datePicker.date)
+        dateSelected.text = formatDate(datePicker: datePicker)
+        
+        poundsPicker.isHidden = true
+        pickerData = ["200", "300", "400", "500"]
+
+        // Connect data:
+        self.poundsPicker.delegate = self
+        self.poundsPicker.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,74 +69,74 @@ class RecordLiftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dateIndexPath = IndexPath(row: 0, section: 0)
-        if dateIndexPath == indexPath {
-            datePicker.isHidden = !datePicker.isHidden
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                self.tableView.beginUpdates()
-                // apple bug fix - some TV lines hide after animation
-                self.tableView.deselectRow(at: indexPath, animated: true)
-                self.tableView.endUpdates()
-            })
+        let dateSelectedRowNumber = IndexPath(row: 0, section: 0)
+        let poundsSelectedRowNumber = IndexPath(row: 3, section: 0)
+        
+        if dateSelectedRowNumber == indexPath {
+            selectedDatePickerRow(indexPath: indexPath)
+        } else if poundsSelectedRowNumber == indexPath {
+           selectedPoundsPickerRow(indexPath: indexPath)
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 1 {
-            let height:CGFloat = datePicker.isHidden ? 0.0 : 216.0
-            return height
+        let datePickerRow = 1
+        let poundsPickerRow = 5
+        
+        if indexPath.section == 0 && indexPath.row == datePickerRow {
+            return expandDatePickerViewRowHeight()
+        } else if indexPath.section == 0 && indexPath.row == poundsPickerRow {
+            return expandPoundsPickerViewRowHeight()
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
-
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//    }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return pickerData.count
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    
+    func selectedDatePickerRow(indexPath: IndexPath) {
+        datePicker.isHidden = !datePicker.isHidden
+        animateRowsWhenTapped(indexPath: indexPath)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func selectedPoundsPickerRow(indexPath: IndexPath) {
+        poundsPicker.isHidden = !poundsPicker.isHidden
+        animateRowsWhenTapped(indexPath: indexPath)
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func formatDate(datePicker: UIDatePicker) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        return dateFormatter.string(from: datePicker.date)
     }
-    */
+    
+    func expandDatePickerViewRowHeight() -> CGFloat {
+        let height:CGFloat = datePicker.isHidden ? 0.0 : 216.0
+        return height
+    }
+    
+    func expandPoundsPickerViewRowHeight() -> CGFloat {
+        let height:CGFloat = poundsPicker.isHidden ? 0.0 : 216.0
+        return height
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func animateRowsWhenTapped(indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.tableView.beginUpdates()
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            self.tableView.endUpdates()
+            print("inside animation")
+        })
+    }
 
 }

@@ -222,15 +222,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cZr-sd-ezH">
-                                                    <rect key="frame" x="24" y="13" width="327" height="27"/>
-                                                </stackView>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEa-M1-Bf5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                                </pickerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cZr-sd-ezH" firstAttribute="top" secondItem="rdv-g3-azJ" secondAttribute="topMargin" constant="2" id="AS9-3f-ts2"/>
-                                                <constraint firstItem="cZr-sd-ezH" firstAttribute="leading" secondItem="rdv-g3-azJ" secondAttribute="leadingMargin" constant="8" id="GdX-m5-C7o"/>
-                                                <constraint firstItem="cZr-sd-ezH" firstAttribute="bottom" secondItem="rdv-g3-azJ" secondAttribute="bottomMargin" constant="-9.5" id="UNo-cJ-fTb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cZr-sd-ezH" secondAttribute="trailing" constant="8" id="nyt-VA-5dl"/>
+                                                <constraint firstItem="dEa-M1-Bf5" firstAttribute="top" secondItem="rdv-g3-azJ" secondAttribute="top" id="CV9-va-4ob"/>
+                                                <constraint firstItem="dEa-M1-Bf5" firstAttribute="leading" secondItem="rdv-g3-azJ" secondAttribute="leading" id="LjJ-8j-Cte"/>
+                                                <constraint firstAttribute="bottom" secondItem="dEa-M1-Bf5" secondAttribute="bottom" id="etl-5s-mcL"/>
+                                                <constraint firstAttribute="trailing" secondItem="dEa-M1-Bf5" secondAttribute="trailing" id="tqh-nk-ffZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -253,6 +253,7 @@
                         <outlet property="chosenLift" destination="1Wc-28-hXL" id="54C-p2-Ium"/>
                         <outlet property="datePicker" destination="4xq-wR-8zg" id="hap-lx-Idp"/>
                         <outlet property="dateSelected" destination="sJw-M4-b0d" id="WeY-Sc-h5m"/>
+                        <outlet property="poundsPicker" destination="dEa-M1-Bf5" id="1xo-6r-yLU"/>
                         <outlet property="poundsSelected" destination="hoy-y6-Khq" id="jPe-3I-fVR"/>
                     </connections>
                 </tableViewController>
