@@ -11,12 +11,12 @@ import os.log
 
 class DashboardTableViewController: UITableViewController {
     
-    var lifts = [LiftCell]()
+    var lifts = [Lift]()
     
     private func loadSampleLifts() {
         let photo1 = UIImage(named: "backSquat")
         
-        guard let lift1 = LiftCell(name: "Back Squat", maxLift: 175, liftImage: photo1!, liftDate: "5/6/2018") else {
+        guard let lift1 = Lift(name: "Back Squat", maxLift: 175, liftImage: photo1!, liftDate: "5/6/2018") else {
             fatalError("Unable to instantiate meal1")
         }
         
@@ -51,7 +51,6 @@ class DashboardTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return lifts.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
@@ -74,51 +73,13 @@ class DashboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? RecordLiftTableViewController, let newLift = sourceViewController.lift {
+            let newIndexPath = IndexPath(row: lifts.count, section: 0)
+            lifts.append(newLift)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

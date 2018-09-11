@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
 		AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */; };
 		AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74356212F56E9007A3425 /* AppDelegate.swift */; };
 		AEB7435C212F56EA007A3425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB7435A212F56EA007A3425 /* Main.storyboard */; };
@@ -14,7 +15,7 @@
 		AEB74361212F56EB007A3425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */; };
 		AEB7436C212F56EB007A3425 /* MyPRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7436B212F56EB007A3425 /* MyPRTests.swift */; };
 		AEB74377212F56EB007A3425 /* MyPRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74376212F56EB007A3425 /* MyPRUITests.swift */; };
-		AEB74385212F571C007A3425 /* LiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74384212F571B007A3425 /* LiftCell.swift */; };
+		AEB74385212F571C007A3425 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74384212F571B007A3425 /* Lift.swift */; };
 		AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */; };
 		AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */; };
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLiftTableViewController.swift; sourceTree = "<group>"; };
 		AEB74353212F56E9007A3425 /* MyPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB74356212F56E9007A3425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		AEB74372212F56EB007A3425 /* MyPRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB74376212F56EB007A3425 /* MyPRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPRUITests.swift; sourceTree = "<group>"; };
 		AEB74378212F56EB007A3425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEB74384212F571B007A3425 /* LiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCell.swift; sourceTree = "<group>"; };
+		AEB74384212F571B007A3425 /* Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
 		AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE2FA9292143F9DF00622DCD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AE2FA92A2143F9F600622DCD /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AEB7434A212F56E9007A3425 = {
 			isa = PBXGroup;
 			children = (
@@ -105,16 +115,17 @@
 		AEB74355212F56E9007A3425 /* MyPR */ = {
 			isa = PBXGroup;
 			children = (
-				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
-				AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */,
-				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
 				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
 				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
-				AEB74384212F571B007A3425 /* LiftCell.swift */,
+				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
+				AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */,
+				AEB74384212F571B007A3425 /* Lift.swift */,
+				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
 				AEB7435A212F56EA007A3425 /* Main.storyboard */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
 				AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */,
 				AEB74362212F56EB007A3425 /* Info.plist */,
+				AE2FA9292143F9DF00622DCD /* Utils */,
 			);
 			path = MyPR;
 			sourceTree = "<group>";
@@ -272,8 +283,9 @@
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
 				AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */,
 				AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */,
-				AEB74385212F571C007A3425 /* LiftCell.swift in Sources */,
+				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
 				AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */,
+				AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
