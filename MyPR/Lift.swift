@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LiftCell {
+class Lift {
     var name: String
     var maxLift: Int
     var liftImage: UIImage

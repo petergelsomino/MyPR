@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import os
 
 class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var pickerData: [String] = [String]()
-
+    var lift: Lift?
     
     //MARK Properties
     @IBOutlet weak var chosenLift: UILabel!
@@ -20,6 +20,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     @IBOutlet weak var dateSelected: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var poundsPicker: UIPickerView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     //MARK: Actions
     @IBAction func dateChanged(_ sender: Any) {
@@ -29,6 +30,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
     // Cancel button is tapped
     @IBAction func unwindToRecordLift(segue:UIStoryboardSegue) {
     }
@@ -49,7 +51,6 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         // Connect data:
         self.poundsPicker.delegate = self
         self.poundsPicker.dataSource = self
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +91,24 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let liftDate = dateSelected.text ?? ""
+        let liftChosen = chosenLift.text
+        let liftLbs = convertStringToInt(string: poundsSelected.text!)
+        let liftImage = UIImage(named: "backSquat")
+        
+        lift = Lift(name: liftChosen!, maxLift: liftLbs, liftImage: liftImage!, liftDate: liftDate)!
+    }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -137,6 +156,19 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
             self.tableView.endUpdates()
             print("inside animation")
         })
+    }
+    
+    private func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        poundsSelected.text = pickerData[row]
+    }
+
+    
+    func convertStringToInt(string: String) -> Int {
+        return Int(string)!
     }
 
 }
