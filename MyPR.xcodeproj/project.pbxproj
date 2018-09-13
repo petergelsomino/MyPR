@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
+		AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */; };
 		AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */; };
 		AEA34324214897B600B8BA61 /* LiftHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA34323214897B600B8BA61 /* LiftHistoryTableView.swift */; };
 		AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
 		AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryViewController.swift; sourceTree = "<group>"; };
 		AEA34323214897B600B8BA61 /* LiftHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryTableView.swift; sourceTree = "<group>"; };
 		AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				AEB74384212F571B007A3425 /* Lift.swift */,
 				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
 				AEB7435A212F56EA007A3425 /* Main.storyboard */,
+				AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */,
 				AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */,
 				AEA34323214897B600B8BA61 /* LiftHistoryTableView.swift */,
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
@@ -290,6 +293,7 @@
 			files = (
 				AEA34324214897B600B8BA61 /* LiftHistoryTableView.swift in Sources */,
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
+				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
 				AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */,
 				AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */,
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
