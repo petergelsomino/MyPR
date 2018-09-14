@@ -407,7 +407,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yJw-oM-Y3F"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ofJ-SG-hwK"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="ofJ-SG-hwK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvc-g2-yE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,7 +436,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XTA-AT-SCQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.5" height="54.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djf-LC-fV6">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="435" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djf-LC-fV6">
                                                         <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <nil key="textColor"/>
@@ -782,7 +782,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z8R-Bm-ZHR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="hKo-Eu-dRG"/>
+                    <tabBarItem key="tabBarItem" title="Percentages" id="hKo-Eu-dRG"/>
+                    <connections>
+                        <outlet property="eightyFivePercentageLabel" destination="U3d-Vd-5q4" id="bY8-Hg-anD"/>
+                        <outlet property="eightyPercentageLabel" destination="I3V-pl-ffq" id="YaV-8Z-gUo"/>
+                        <outlet property="fiveRepMax" destination="SBE-zN-iKf" id="aQp-SG-O0x"/>
+                        <outlet property="nintyFivePercentageLabel" destination="sLU-9o-cVx" id="0tD-Rb-8me"/>
+                        <outlet property="nintyPercentageLabel" destination="7yU-uZ-qSD" id="jUq-Uo-g4a"/>
+                        <outlet property="oneHundredFivePercentageLabel" destination="cFD-Hn-Dz0" id="Jj2-ng-hpS"/>
+                        <outlet property="oneHundredPercentageLabel" destination="872-Ma-HV7" id="sH8-dN-fzr"/>
+                        <outlet property="oneRepMax" destination="djf-LC-fV6" id="wj0-a9-3qC"/>
+                        <outlet property="seventyFivePercentageLabel" destination="WUs-HJ-Vpk" id="yOT-5M-coF"/>
+                        <outlet property="seventyPercentLabel" destination="yZ7-35-CJ0" id="B1d-x0-BNN"/>
+                        <outlet property="threeRepMax" destination="SBE-zN-iKf" id="UcG-v3-H78"/>
+                        <outlet property="twoRepMax" destination="zIp-vs-gXd" id="Dnz-UA-g1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9f-0X-nXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
