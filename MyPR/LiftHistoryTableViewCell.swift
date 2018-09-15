@@ -10,6 +10,10 @@ import UIKit
 
 class LiftHistoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbsHistoryLabel: UILabel!
+    @IBOutlet weak var repsHistoryLabel: UILabel!
+    @IBOutlet weak var dateLiftHistory: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

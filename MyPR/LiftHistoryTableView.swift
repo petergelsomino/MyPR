@@ -10,12 +10,10 @@ import UIKit
 
 class LiftHistoryTableView: UITableView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var lifts = [Lift]()
+    
+    override func numberOfRows(inSection section: Int) -> Int {
+        return lifts.count
     }
-    */
-
+    
 }

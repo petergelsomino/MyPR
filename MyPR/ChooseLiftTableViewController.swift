@@ -27,12 +27,6 @@ class ChooseLiftTableViewController: UITableViewController {
             LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power Clean", "Hang Power Clean", "Power Clean"]),
             LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Full Power Snatch", "Hang Power Snatch"])
         ]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
