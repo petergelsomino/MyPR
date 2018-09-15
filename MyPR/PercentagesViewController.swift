@@ -9,6 +9,9 @@
 import UIKit
 
 class PercentagesViewController: UIViewController {
+    
+    // MARK: Properties
+    var repMaxFloat:Float = 0.0
 
     @IBOutlet weak var oneRepMax: UILabel!
     @IBOutlet weak var twoRepMax: UILabel!
@@ -24,7 +27,35 @@ class PercentagesViewController: UIViewController {
     @IBOutlet weak var oneHundredPercentageLabel: UILabel!
     @IBOutlet weak var oneHundredFivePercentageLabel: UILabel!
     
-    var repMaxFloat:Float = 0.0
+    @IBOutlet weak var segmentedControlLabel: UISegmentedControl!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
+    
+    // MARK: Actions
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        switch segmentedControlLabel.selectedSegmentIndex
+        {
+        case 0:
+            print("First Segment Selected")
+            repMaxFloat = Float(oneRepMax.text!)!
+            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            
+        case 1:
+            print("second Segment Selected")
+            repMaxFloat = Float(twoRepMax.text!)!
+            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+        case 2:
+            print("third Segment Selected")
+            repMaxFloat = Float(threeRepMax.text!)!
+            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+        case 3:
+            print("forth Segment Selected")
+            repMaxFloat = Float(fiveRepMax.text!)!
+            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+        default:
+            break
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +79,6 @@ class PercentagesViewController: UIViewController {
         oneHundredPercentageLabel.text = String(Int((repMax).rounded()))
         oneHundredFivePercentageLabel.text = String(Int((repMax * 1.05).rounded()))
     }
+    
 
 }

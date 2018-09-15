@@ -71,7 +71,6 @@
                                     <outlet property="liftImage" destination="dw8-Sv-9sW" id="w8R-Hf-jHP"/>
                                     <outlet property="liftLabel" destination="xbV-r2-qq3" id="QcB-9D-YYO"/>
                                     <outlet property="maxLiftLabel" destination="Xjk-0J-whE" id="k3C-R2-YPt"/>
-                                    <segue destination="Yyh-H8-hII" kind="show" id="tLQ-in-S12"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,6 +88,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Yyh-H8-hII" kind="show" identifier="dashToPercentage" id="3Fy-ih-lb2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUp-qJ-25a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -458,7 +460,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QLi-TJ-S7V">
                                                 <rect key="frame" x="92.5" y="0.0" width="82" height="54.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="405" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-vs-gXd">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="370" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-vs-gXd">
                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <nil key="textColor"/>
@@ -484,7 +486,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sdQ-yo-77q">
                                                 <rect key="frame" x="184.5" y="0.0" width="82.5" height="54.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArN-8F-QLA">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="260" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArN-8F-QLA">
                                                         <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <nil key="textColor"/>
@@ -511,7 +513,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fpA-2Y-PGN">
                                                 <rect key="frame" x="277" y="0.0" width="82" height="54.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-zN-iKf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="225" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-zN-iKf">
                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <nil key="textColor"/>
@@ -558,8 +560,11 @@
                                     <segment title="1 REP"/>
                                     <segment title="2 REP"/>
                                     <segment title="3 REP"/>
-                                    <segment title="4 REP"/>
+                                    <segment title="5 REP"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="Zbd-54-z3s" eventType="valueChanged" id="oel-2g-Wln"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYh-c8-78r">
                                 <rect key="frame" x="0.0" y="280" width="375" height="166"/>
@@ -783,6 +788,7 @@
                         <viewLayoutGuide key="safeArea" id="Z8R-Bm-ZHR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Percentages" id="hKo-Eu-dRG"/>
+                    <navigationItem key="navigationItem" title="Title" id="XG6-Xp-937"/>
                     <connections>
                         <outlet property="eightyFivePercentageLabel" destination="U3d-Vd-5q4" id="bY8-Hg-anD"/>
                         <outlet property="eightyPercentageLabel" destination="I3V-pl-ffq" id="YaV-8Z-gUo"/>
@@ -792,6 +798,7 @@
                         <outlet property="oneHundredFivePercentageLabel" destination="cFD-Hn-Dz0" id="Jj2-ng-hpS"/>
                         <outlet property="oneHundredPercentageLabel" destination="872-Ma-HV7" id="sH8-dN-fzr"/>
                         <outlet property="oneRepMax" destination="djf-LC-fV6" id="wj0-a9-3qC"/>
+                        <outlet property="segmentedControlLabel" destination="XaU-qF-s6d" id="Bap-Qv-aq8"/>
                         <outlet property="seventyFivePercentageLabel" destination="WUs-HJ-Vpk" id="yOT-5M-coF"/>
                         <outlet property="seventyPercentLabel" destination="yZ7-35-CJ0" id="B1d-x0-BNN"/>
                         <outlet property="threeRepMax" destination="SBE-zN-iKf" id="UcG-v3-H78"/>
@@ -802,10 +809,10 @@
             </objects>
             <point key="canvasLocation" x="81" y="-19"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Lift Tab Bar View Controller-->
         <scene sceneID="7Fg-Wt-pUh">
             <objects>
-                <tabBarController id="Yyh-H8-hII" sceneMemberID="viewController">
+                <tabBarController id="Yyh-H8-hII" customClass="LiftTabBarViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IsX-cZ-I4Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
