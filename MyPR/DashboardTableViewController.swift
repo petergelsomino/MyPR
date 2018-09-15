@@ -12,6 +12,7 @@ import os.log
 class DashboardTableViewController: UITableViewController {
     
     var lifts = [Lift]()
+    var liftTitle = ""
     
     private func loadSampleLifts() {
         let photo1 = UIImage(named: "backSquat")
@@ -79,6 +80,19 @@ class DashboardTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: lifts.count, section: 0)
             lifts.append(newLift)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        liftTitle = lifts[indexPath.row].name
+        performSegue(withIdentifier: "dashToPercentage", sender: self)
+    }
+    
+    // Send title information to percentages view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dashToPercentage" {
+            let vc = segue.destination as! LiftTabBarViewController
+            vc.title = liftTitle
         }
     }
 
