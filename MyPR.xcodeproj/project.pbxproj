@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D74542A21389669E45BAB99 /* Pods_MyPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */; };
+		AE05489221519AFC002E4754 /* LiftDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05489121519AFC002E4754 /* LiftDBModel.swift */; };
 		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
 		AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */; };
 		AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */; };
@@ -25,6 +26,7 @@
 		AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */; };
 		AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */; };
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
+		AEDEF856215582B200AA78B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 /* Begin PBXFileReference section */
 		2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.release.xcconfig"; sourceTree = "<group>"; };
+		AE05489121519AFC002E4754 /* LiftDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftDBModel.swift; sourceTree = "<group>"; };
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftTabBarViewController.swift; sourceTree = "<group>"; };
 		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
+		AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,14 @@
 				8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE05489321519B01002E4754 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				AE05489121519AFC002E4754 /* LiftDBModel.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		AE2FA9292143F9DF00622DCD /* Utils */ = {
@@ -149,12 +161,14 @@
 				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
 				AEB7435A212F56EA007A3425 /* Main.storyboard */,
 				AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */,
+				AE05489321519B01002E4754 /* DB */,
 				AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */,
 				AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */,
 				AEA34323214897B600B8BA61 /* LiftHistoryTableView.swift */,
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
 				AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */,
+				AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */,
 				AEB74362212F56EB007A3425 /* Info.plist */,
 				AE2FA9292143F9DF00622DCD /* Utils */,
 			);
@@ -294,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB74361212F56EB007A3425 /* LaunchScreen.storyboard in Resources */,
+				AEDEF856215582B200AA78B7 /* GoogleService-Info.plist in Resources */,
 				AEB7435E212F56EB007A3425 /* Assets.xcassets in Resources */,
 				AEB7435C212F56EA007A3425 /* Main.storyboard in Resources */,
 			);
@@ -321,16 +336,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyPR/Pods-MyPR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -345,15 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MyPR-checkManifestLockResult.txt",
 			);
@@ -377,6 +384,7 @@
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
 				AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */,
 				AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */,
+				AE05489221519AFC002E4754 /* LiftDBModel.swift in Sources */,
 				AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */,
 				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
 				AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */,

@@ -104,9 +104,12 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         let liftDate = dateSelected.text ?? ""
         let liftChosen = chosenLift.text
         let liftLbs = convertStringToInt(string: poundsSelected.text!)
-        let liftImage = UIImage(named: "backSquat")
+//        let liftImage = UIImage(named: "backSquat")
         
-        lift = Lift(name: liftChosen!, maxLift: liftLbs, liftImage: liftImage!, liftDate: liftDate)!
+        
+        lift = Lift(value: ["name": liftChosen, "maxLift": liftLbs, "liftDate": liftDate])
+//        lift = Lift(value: ["name": liftChosen, "maxLift": liftLbs, "liftImage": liftImage, "liftDate": liftDate])
+      //  lift = Lift(name: liftChosen!, maxLift: liftLbs, liftImage: liftImage!, liftDate: liftDate)!
     }
     
     
