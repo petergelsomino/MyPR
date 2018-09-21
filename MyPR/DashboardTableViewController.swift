@@ -15,11 +15,10 @@ class DashboardTableViewController: UITableViewController {
     var liftTitle = ""
     
     private func loadSampleLifts() {
-        let photo1 = UIImage(named: "backSquat")
-        
-        guard let lift1 = Lift(name: "Back Squat", maxLift: 175, liftImage: photo1!, liftDate: "5/6/2018") else {
-            fatalError("Unable to instantiate meal1")
-        }
+//        let photo1 = UIImage(named: "backSquat")
+
+//        let lift1 = Lift(value: ["name": "Back Squat", "maxLift": 175, "liftImage": photo1!, "liftDate": "5/6/2018"])
+        let lift1 = Lift(value: ["name": "Back Squat", "maxLift": 175, "liftDate": "5/6/2018"])
         
         lifts += [lift1]
         
@@ -55,7 +54,7 @@ class DashboardTableViewController: UITableViewController {
 
         cell.liftLabel.text = liftcell.name
         cell.maxLiftLabel.text = "\(liftcell.maxLift) LBS"
-        cell.liftImage.image = liftcell.liftImage
+//        cell.liftImage.image = liftcell.liftImage
         cell.liftDate.text = liftcell.liftDate
         
         // Get the cell to wrap
