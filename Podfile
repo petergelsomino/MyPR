@@ -3,4 +3,5 @@ platform :ios, '10.3'
  
  target 'MyPR' do
   pod 'RealmSwift'
+  pod 'Firebase/Core'
  end
