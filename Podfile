@@ -5,4 +5,5 @@ platform :ios, '10.3'
   pod 'RealmSwift'
   pod 'Firebase/Core'
   pod ‘Firebase/Auth’
+  pod 'Firebase/Database'
  end
