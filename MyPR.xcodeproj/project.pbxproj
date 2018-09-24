@@ -27,6 +27,8 @@
 		AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */; };
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
 		AEDEF856215582B200AA78B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */; };
+		AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF85721558A3000AA78B7 /* LoginViewController.swift */; };
+		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
 		AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AEDEF85721558A3000AA78B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,8 @@
 				AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */,
 				AEB74362212F56EB007A3425 /* Info.plist */,
 				AE2FA9292143F9DF00622DCD /* Utils */,
+				AEDEF85721558A3000AA78B7 /* LoginViewController.swift */,
+				AEDEF859215590C300AA78B7 /* SignUpViewController.swift */,
 			);
 			path = MyPR;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyPR/Pods-MyPR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -345,6 +352,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -380,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */,
 				AEA34324214897B600B8BA61 /* LiftHistoryTableView.swift in Sources */,
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
@@ -388,6 +397,7 @@
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
 				AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */,
 				AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */,
+				AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */,
 				AE05489221519AFC002E4754 /* LiftDBModel.swift in Sources */,
 				AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */,
 				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
@@ -569,6 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SGVJZ7G6WW;
 				INFOPLIST_FILE = MyPR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SGVJZ7G6WW;
 				INFOPLIST_FILE = MyPR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
