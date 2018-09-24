@@ -132,6 +132,51 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AEA5B5D22159A60D002B9070 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEB74384212F571B007A3425 /* Lift.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AEA5B5D32159A63B002B9070 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEA5B5D62159A6C5002B9070 /* Login */,
+				AEA5B5D42159A64C002B9070 /* Dashboard */,
+				AEA5B5D52159A69E002B9070 /* RecordLift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AEA5B5D42159A64C002B9070 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
+				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		AEA5B5D52159A69E002B9070 /* RecordLift */ = {
+			isa = PBXGroup;
+			children = (
+				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
+				AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */,
+			);
+			path = RecordLift;
+			sourceTree = "<group>";
+		};
+		AEA5B5D62159A6C5002B9070 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AEDEF85721558A3000AA78B7 /* LoginViewController.swift */,
+				AEDEF859215590C300AA78B7 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		AEB7434A212F56E9007A3425 = {
 			isa = PBXGroup;
 			children = (
@@ -157,26 +202,21 @@
 		AEB74355212F56E9007A3425 /* MyPR */ = {
 			isa = PBXGroup;
 			children = (
-				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
-				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
-				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
-				AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */,
-				AEB74384212F571B007A3425 /* Lift.swift */,
-				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
-				AEB7435A212F56EA007A3425 /* Main.storyboard */,
-				AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */,
+				AE2FA9292143F9DF00622DCD /* Utils */,
+				AEA5B5D22159A60D002B9070 /* Models */,
+				AEA5B5D32159A63B002B9070 /* Controllers */,
 				AE05489321519B01002E4754 /* DB */,
 				AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */,
+				AEB7435A212F56EA007A3425 /* Main.storyboard */,
 				AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */,
+				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
+				AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */,
 				AEA34323214897B600B8BA61 /* LiftHistoryTableView.swift */,
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
 				AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */,
 				AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */,
 				AEB74362212F56EB007A3425 /* Info.plist */,
-				AE2FA9292143F9DF00622DCD /* Utils */,
-				AEDEF85721558A3000AA78B7 /* LoginViewController.swift */,
-				AEDEF859215590C300AA78B7 /* SignUpViewController.swift */,
 			);
 			path = MyPR;
 			sourceTree = "<group>";
@@ -348,6 +388,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -356,6 +397,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
