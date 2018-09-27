@@ -9,21 +9,23 @@
 import UIKit
 import os
 import FirebaseDatabase
+import FirebaseAuth
 
 class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //MARK Properties
     var pickerData: [String] = [String]()
     var lift: Lift?
+    var user: User!
+    let ref = Database.database().reference(withPath: "allLifts")
     
-    //MARK Properties
+    //MARK Outlets
     @IBOutlet weak var chosenLift: UILabel!
     @IBOutlet weak var poundsSelected: UILabel!
     @IBOutlet weak var dateSelected: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var poundsPicker: UIPickerView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    let ref = Database.database().reference(withPath: "allLifts")
     
     //MARK: Actions
     @IBAction func dateChanged(_ sender: Any) {
@@ -54,6 +56,12 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         // Connect data:
         self.poundsPicker.delegate = self
         self.poundsPicker.dataSource = self
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,9 +115,10 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         let liftChosen = chosenLift.text
         let liftLbs = convertStringToInt(string: poundsSelected.text!)
         let liftDate = dateSelected.text ?? ""
-
+        let user = self.user.email
+        print("PETE: --> \(user)")
         
-        lift = Lift(name: liftChosen!, maxLift: liftLbs, liftDate: liftDate)
+        lift = Lift(name: liftChosen!, maxLift: liftLbs, liftDate: liftDate, recordedByUser: user)
     }
     
     

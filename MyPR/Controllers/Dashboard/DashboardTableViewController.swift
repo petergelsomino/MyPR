@@ -18,7 +18,7 @@ class DashboardTableViewController: UITableViewController {
 
     
     private func loadSampleLifts() {
-        let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018")
+        let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
         
         lifts += [lift1]
         
@@ -26,7 +26,24 @@ class DashboardTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleLifts()
+        ref.observe(.value, with: { snapshot in
+            // 2
+            var previousLifts: [Lift] = []
+            
+            // 3
+            for child in snapshot.children {
+                // 4
+                if let snapshot = child as? DataSnapshot,
+                    let lift = Lift(snapshot: snapshot) {
+                    previousLifts.append(lift)
+                }
+            }
+            
+            // 5
+            self.lifts = previousLifts
+            self.tableView.reloadData()
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
