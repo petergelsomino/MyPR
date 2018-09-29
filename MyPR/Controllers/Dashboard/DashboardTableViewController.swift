@@ -9,14 +9,16 @@
 import UIKit
 import os.log
 import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
 class DashboardTableViewController: UITableViewController {
     
     var lifts = [Lift]()
     var liftTitle = ""
-    let ref = Database.database().reference(withPath: "allLifts")
+    var ref = Database.database().reference(withPath: "users")
+    var user: User!
 
-    
     private func loadSampleLifts() {
         let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
         
@@ -26,16 +28,25 @@ class DashboardTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
         ref.observe(.value, with: { snapshot in
             // 2
             var previousLifts: [Lift] = []
-            
-            // 3
+           
             for child in snapshot.children {
                 // 4
+                print("PETE: in child --> (\(child)")
+                
                 if let snapshot = child as? DataSnapshot,
                     let lift = Lift(snapshot: snapshot) {
-                    previousLifts.append(lift)
+                    print("Inside Snapshot --> \(lift)")
+                    
+                    if lift.recordedByUser == self.user.email {
+                        previousLifts.append(lift)
+                    }
                 }
             }
             
@@ -88,8 +99,15 @@ class DashboardTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? RecordLiftTableViewController, let newLift = sourceViewController.lift {
             let newIndexPath = IndexPath(row: lifts.count, section: 0)
             lifts.append(newLift)
+        
+            print(self.user.email)
             
-            let newLiftRef = self.ref.child(newLift.name.lowercased())
+            var liftCategory = newLift.name.replacingOccurrences(of: " ", with: "")
+            liftCategory = liftCategory.lowercased()
+            let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+            let allLiftRef = ref.child("/\(emailString)/allLifts/\(liftCategory)")
+            let newLiftRef = allLiftRef.childByAutoId()
+            
             newLiftRef.setValue(newLift.toAnyObject())
             
             tableView.insertRows(at: [newIndexPath], with: .automatic)
