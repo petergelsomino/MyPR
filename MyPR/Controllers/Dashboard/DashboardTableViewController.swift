@@ -9,41 +9,60 @@
 import UIKit
 import os.log
 import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
 class DashboardTableViewController: UITableViewController {
     
     var lifts = [Lift]()
     var liftTitle = ""
-    let ref = Database.database().reference(withPath: "allLifts")
+    var ref = Database.database().reference(withPath: "users")
+    var user: User!
 
-    
     private func loadSampleLifts() {
-        let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
+       // let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
         
-        lifts += [lift1]
+//        lifts += [lift1]
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref.observe(.value, with: { snapshot in
-            // 2
-            var previousLifts: [Lift] = []
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+            let newRef = self.ref.child("/\(emailString)/allLifts")
+        
             
-            // 3
-            for child in snapshot.children {
-                // 4
-                if let snapshot = child as? DataSnapshot,
-                    let lift = Lift(snapshot: snapshot) {
-                    previousLifts.append(lift)
-                }
-            }
-            
-            // 5
-            self.lifts = previousLifts
-            self.tableView.reloadData()
-        })
-
+            print(self.getHighestliftValuePerCategory(emailString: emailString, liftNames: ["Back Squat", "Front Squat", "Hack Squat"]))
+//            ref.observe(.value, with: { snapshot in
+//            // 2
+//            var previousLifts: [Lift] = []
+//
+//            for child in snapshot.children {
+//                // 4
+//                print("PETE: in child --> (\(child)")
+//
+//                if let snapshot = child as? DataSnapshot,
+//                    let lift = Lift(snapshot: snapshot) {
+//                    print("Inside Snapshot --> \(lift)")
+//
+//                    if lift.recordedByUser == self.user.email {
+//                        previousLifts.append(lift)
+//                    }
+//                }
+//            }
+//
+//            // 5
+//            self.lifts = previousLifts
+//            self.tableView.reloadData()
+//        })
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(self.user.email)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,8 +107,15 @@ class DashboardTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? RecordLiftTableViewController, let newLift = sourceViewController.lift {
             let newIndexPath = IndexPath(row: lifts.count, section: 0)
             lifts.append(newLift)
+        
+            print(self.user.email)
             
-            let newLiftRef = self.ref.child(newLift.name.lowercased())
+            var liftCategory = newLift.name.replacingOccurrences(of: " ", with: "")
+            liftCategory = liftCategory.lowercased()
+            let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+            let allLiftRef = ref.child("/\(emailString)/allLifts/\(liftCategory)")
+            let newLiftRef = allLiftRef.childByAutoId()
+            
             newLiftRef.setValue(newLift.toAnyObject())
             
             tableView.insertRows(at: [newIndexPath], with: .automatic)
@@ -107,6 +133,46 @@ class DashboardTableViewController: UITableViewController {
             let vc = segue.destination as! LiftTabBarViewController
             vc.title = liftTitle
         }
+    }
+    
+    func getHighestliftValuePerCategory(emailString: String, liftNames: [String]) -> [Lift] {
+
+        var maxLiftsArray = [Lift]()
+        
+        let group = DispatchGroup()
+        group.enter()
+
+        for lift in liftNames {
+            
+            var lft = lift.replacingOccurrences(of: " ", with: "")
+            lft = lft.lowercased()
+            
+            let liftRef = self.ref.child("/\(emailString)/allLifts/\(lft)").queryOrdered(byChild: "maxLift")
+            // Can make this better but jusy pulling last value.  Not sure how to do that yet
+            var currentMaxLift = Lift(name: lift, maxLift: 0, liftDate: "", recordedByUser: emailString)
+            
+            DispatchQueue.main.async {
+                liftRef.observe(.value, with: { snapshot in
+                    for child in snapshot.children {
+                        if let snapshot = child as? DataSnapshot,
+                            let temp = Lift(snapshot: snapshot) {
+                            print("Pete in temp snapshot")
+                            print("Current maxLift = \(currentMaxLift.maxLift)")
+                            print("Current maxLift = \(temp.maxLift)")
+                                if currentMaxLift.maxLift <= temp.maxLift {
+                                    currentMaxLift = temp
+                                }
+                        }
+                    }
+                    
+                    if !(currentMaxLift.maxLift == 0) {
+                        maxLiftsArray.append(currentMaxLift)
+                    }
+                })
+            }
+            
+        }
+        return maxLiftsArray
     }
 
 }

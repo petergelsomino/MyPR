@@ -10,12 +10,19 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    var currentUser: User?
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButton(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error == nil{
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    guard let user = user else { return }
+                    self.currentUser = User(authData: user)
+                }
                 self.performSegue(withIdentifier: "loginToHome", sender: self)
             }
             else{

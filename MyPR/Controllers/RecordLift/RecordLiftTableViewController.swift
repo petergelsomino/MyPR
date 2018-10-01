@@ -17,7 +17,6 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     var pickerData: [String] = [String]()
     var lift: Lift?
     var user: User!
-    let ref = Database.database().reference(withPath: "allLifts")
     
     //MARK Outlets
     @IBOutlet weak var chosenLift: UILabel!
@@ -117,7 +116,6 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         let liftDate = dateSelected.text ?? ""
         let user = self.user.email
         print("PETE: --> \(user)")
-        
         lift = Lift(name: liftChosen!, maxLift: liftLbs, liftDate: liftDate, recordedByUser: user)
     }
     

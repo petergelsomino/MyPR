@@ -17,16 +17,20 @@ class ChooseLiftTableViewController: UITableViewController {
     }
 
     var liftName = ""
-    var liftObjectsArray = [LiftObjects]()
+    var liftObjectsArray = [
+        LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat"]),
+        LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power Clean", "Hang Power Clean", "Power Clean"]),
+        LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Full Power Snatch", "Hang Power Snatch"])
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        liftObjectsArray = [
-            LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat"]),
-            LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power Clean", "Hang Power Clean", "Power Clean"]),
-            LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Full Power Snatch", "Hang Power Snatch"])
-        ]
+//
+//        liftObjectsArray = [
+//            LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat"]),
+//            LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power Clean", "Hang Power Clean", "Power Clean"]),
+//            LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Full Power Snatch", "Hang Power Snatch"])
+//        ]
     }
     
     override func didReceiveMemoryWarning() {
