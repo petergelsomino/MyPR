@@ -20,9 +20,9 @@ class DashboardTableViewController: UITableViewController {
     var user: User!
 
     private func loadSampleLifts() {
-        let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
+       // let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
         
-        lifts += [lift1]
+//        lifts += [lift1]
         
     }
 
@@ -31,30 +31,38 @@ class DashboardTableViewController: UITableViewController {
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
-        }
-        ref.observe(.value, with: { snapshot in
-            // 2
-            var previousLifts: [Lift] = []
-           
-            for child in snapshot.children {
-                // 4
-                print("PETE: in child --> (\(child)")
-                
-                if let snapshot = child as? DataSnapshot,
-                    let lift = Lift(snapshot: snapshot) {
-                    print("Inside Snapshot --> \(lift)")
-                    
-                    if lift.recordedByUser == self.user.email {
-                        previousLifts.append(lift)
-                    }
-                }
-            }
+            let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+            let newRef = self.ref.child("/\(emailString)/allLifts")
+        
             
-            // 5
-            self.lifts = previousLifts
-            self.tableView.reloadData()
-        })
-
+            print(self.getHighestliftValuePerCategory(emailString: emailString, liftNames: ["Back Squat", "Front Squat", "Hack Squat"]))
+//            ref.observe(.value, with: { snapshot in
+//            // 2
+//            var previousLifts: [Lift] = []
+//
+//            for child in snapshot.children {
+//                // 4
+//                print("PETE: in child --> (\(child)")
+//
+//                if let snapshot = child as? DataSnapshot,
+//                    let lift = Lift(snapshot: snapshot) {
+//                    print("Inside Snapshot --> \(lift)")
+//
+//                    if lift.recordedByUser == self.user.email {
+//                        previousLifts.append(lift)
+//                    }
+//                }
+//            }
+//
+//            // 5
+//            self.lifts = previousLifts
+//            self.tableView.reloadData()
+//        })
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(self.user.email)
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,6 +133,46 @@ class DashboardTableViewController: UITableViewController {
             let vc = segue.destination as! LiftTabBarViewController
             vc.title = liftTitle
         }
+    }
+    
+    func getHighestliftValuePerCategory(emailString: String, liftNames: [String]) -> [Lift] {
+
+        var maxLiftsArray = [Lift]()
+        
+        let group = DispatchGroup()
+        group.enter()
+
+        for lift in liftNames {
+            
+            var lft = lift.replacingOccurrences(of: " ", with: "")
+            lft = lft.lowercased()
+            
+            let liftRef = self.ref.child("/\(emailString)/allLifts/\(lft)").queryOrdered(byChild: "maxLift")
+            // Can make this better but jusy pulling last value.  Not sure how to do that yet
+            var currentMaxLift = Lift(name: lift, maxLift: 0, liftDate: "", recordedByUser: emailString)
+            
+            DispatchQueue.main.async {
+                liftRef.observe(.value, with: { snapshot in
+                    for child in snapshot.children {
+                        if let snapshot = child as? DataSnapshot,
+                            let temp = Lift(snapshot: snapshot) {
+                            print("Pete in temp snapshot")
+                            print("Current maxLift = \(currentMaxLift.maxLift)")
+                            print("Current maxLift = \(temp.maxLift)")
+                                if currentMaxLift.maxLift <= temp.maxLift {
+                                    currentMaxLift = temp
+                                }
+                        }
+                    }
+                    
+                    if !(currentMaxLift.maxLift == 0) {
+                        maxLiftsArray.append(currentMaxLift)
+                    }
+                })
+            }
+            
+        }
+        return maxLiftsArray
     }
 
 }

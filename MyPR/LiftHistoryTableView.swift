@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-class LiftHistoryTableView: UITableView {
-
-    var lifts = [Lift]()
+class LiftHistoryTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
-    override func numberOfRows(inSection section: Int) -> Int {
-        return lifts.count
+    // MARK: Properties
+    var lifts = [Lift]()
+    var ref = Database.database().reference(withPath: "users")
+    var user: User!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        lifts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
     }
     
 }
