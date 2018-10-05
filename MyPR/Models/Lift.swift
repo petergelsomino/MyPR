@@ -17,14 +17,16 @@ struct Lift {
     let name: String
     let maxLift: Int
     let liftDate: String
+    let reps: Int
     let recordedByUser: String
     
-    init(name: String, maxLift: Int, liftDate: String, key: String = "", recordedByUser: String) {
+    init(name: String, maxLift: Int, liftDate: String, key: String = "", reps: Int, recordedByUser: String) {
         self.ref = nil
         self.key = key
         self.name = name
         self.maxLift = maxLift
         self.liftDate = liftDate
+        self.reps = reps
         self.recordedByUser = recordedByUser
     }
     
@@ -34,6 +36,7 @@ struct Lift {
             let name = value["name"] as? String,
             let maxLift = value["maxLift"] as? Int,
             let liftDate = value["liftDate"] as? String,
+            let reps =  value["reps"] as? Int,
             let recordedByUser = value["recordedByUser"] as? String else {
                 return nil
         }
@@ -43,6 +46,7 @@ struct Lift {
         self.name = name
         self.maxLift = maxLift
         self.liftDate = liftDate
+        self.reps = reps
         self.recordedByUser = recordedByUser
     }
     
@@ -51,6 +55,7 @@ struct Lift {
             "name": name,
             "maxLift": maxLift,
             "liftDate": liftDate,
+            "reps": reps,
             "recordedByUser": recordedByUser
         ]
     }

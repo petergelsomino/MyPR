@@ -149,7 +149,7 @@ class DashboardTableViewController: UITableViewController {
             
             let liftRef = self.ref.child("/\(emailString)/allLifts/\(lft)").queryOrdered(byChild: "maxLift")
             // Can make this better but jusy pulling last value.  Not sure how to do that yet
-            var currentMaxLift = Lift(name: lift, maxLift: 0, liftDate: "", recordedByUser: emailString)
+            var currentMaxLift = Lift(name: lift, maxLift: 0, liftDate: "", reps: 1,recordedByUser: emailString)
             
             DispatchQueue.main.async {
                 liftRef.observe(.value, with: { snapshot in
