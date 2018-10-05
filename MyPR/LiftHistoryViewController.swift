@@ -55,7 +55,6 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         cell.repsHistoryLabel.text = "\(liftcell.reps)"
         
         return cell
-        print("Cell --> \(cell)")
     }
     
 }

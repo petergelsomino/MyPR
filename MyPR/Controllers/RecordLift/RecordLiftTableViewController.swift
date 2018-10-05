@@ -42,6 +42,10 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     @IBAction func unwindToRecordLift(segue:UIStoryboardSegue) {
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.chosenLift.text = self.chosenLift.text
@@ -60,9 +64,11 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         // Connect data:
         self.poundsPicker.delegate = self
         self.poundsPicker.dataSource = self
+        self.poundsPicker.tag = 1
         
         self.repsPicker.delegate = self
         self.repsPicker.dataSource = self
+        self.repsPicker.tag = 2
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
@@ -83,8 +89,12 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         return 1
     }
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 8
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -103,7 +113,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let datePickerRow = 1
-        let poundsPickerRow = 5
+        let poundsPickerRow = 4
         let repsPickerRow = 6
         
         if indexPath.section == 0 && indexPath.row == datePickerRow {
@@ -134,16 +144,21 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         lift = Lift(name: liftChosen!, maxLift: liftLbs, liftDate: liftDate, reps: reps, recordedByUser: user)
     }
     
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-         return pickerData.count
+        if (pickerView.tag == 1){
+            return pickerData.count
+        }else{
+            return repsPickerData.count
+        }
     }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView.tag == 1){
+            return "\(pickerData[row])"
+        } else {
+            return "\(repsPickerData[row])"
+        }
+    }
     
     func selectedDatePickerRow(indexPath: IndexPath) {
         datePicker.isHidden = !datePicker.isHidden
@@ -177,15 +192,8 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func expandRepsPickerViewRowHeight() -> CGFloat {
-        let height:CGFloat = poundsPicker.isHidden ? 0.0 : 216.0
+        let height:CGFloat = repsPicker.isHidden ? 0.0 : 216.0
         return height
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if row == 3 {
-            return pickerData[row]
-        }
-            return repsPickerData[row]
     }
     
     func animateRowsWhenTapped(indexPath: IndexPath) {
@@ -198,7 +206,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row == 3 {
+        if row == 4 {
             poundsSelected.text = pickerData[row]
             return
         }
