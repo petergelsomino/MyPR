@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class PercentagesViewController: UIViewController {
     
     // MARK: Properties
     var repMaxFloat:Float = 0.0
+    var ref = Database.database().reference(withPath: "users")
+    var user: User!
+    var lifts = [Lift]()
+    
 
     @IBOutlet weak var oneRepMax: UILabel!
     @IBOutlet weak var twoRepMax: UILabel!
@@ -59,6 +65,14 @@ class PercentagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("In Percentages View Controller")
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            let adjusteduser = self.user.email.replacingOccurrences(of: ".", with: "-")
+            self.getLiftHistory(emailString: adjusteduser, liftName: "Back Squat")
+        }
+    
         repMaxFloat = Float(oneRepMax.text!)!
         calculatePercentagesBasedOnReps(repMax: repMaxFloat)
         // Do any additional setup after loading the view.
@@ -78,6 +92,39 @@ class PercentagesViewController: UIViewController {
         nintyFivePercentageLabel.text = String(Int((repMax * 0.95).rounded()))
         oneHundredPercentageLabel.text = String(Int((repMax).rounded()))
         oneHundredFivePercentageLabel.text = String(Int((repMax * 1.05).rounded()))
+    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print("in prepare segue")
+//        if let vc = segue.destination as? LiftHistoryViewController {
+//            vc.lifts = self.lifts
+//        }
+//    }
+
+    func getLiftHistory(emailString: String, liftName: String) {
+        
+        var lift = liftName.replacingOccurrences(of: " ", with: "")
+        lift = lift.lowercased()
+        
+        let liftRef = self.ref.child("/\(emailString)/allLifts/\(lift)").queryOrdered(byChild: "liftDate")
+        
+        liftRef.observe(.value, with: { snapshot in
+            
+            var previousLifts: [Lift] = []
+            
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let lift = Lift(snapshot: snapshot) {
+                    previousLifts.append(lift)
+                }
+            }
+            self.lifts = previousLifts
+            
+            let liftHistoryVC = self.tabBarController?.viewControllers![1] as! LiftHistoryViewController
+            liftHistoryVC.lifts = previousLifts
+        })
+        
     }
     
 

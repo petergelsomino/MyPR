@@ -12,7 +12,6 @@ class DashboardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var liftLabel: UILabel!
     @IBOutlet weak var maxLiftLabel: UILabel!
-    @IBOutlet weak var liftImage: UIImageView!
     @IBOutlet weak var liftDate: UILabel!
     
     override func awakeFromNib() {
