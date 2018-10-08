@@ -786,10 +786,10 @@
             </objects>
             <point key="canvasLocation" x="-988" y="395"/>
         </scene>
-        <!--BACK SQUAT DETAILS-->
+        <!--Percentages-->
         <scene sceneID="Z8z-4N-i7p">
             <objects>
-                <viewController title="BACK SQUAT DETAILS" id="Zbd-54-z3s" customClass="PercentagesViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Percentages" id="Zbd-54-z3s" customClass="PercentagesViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HK2-w9-2AM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -971,7 +971,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i85-Mb-2fo">
                                                         <rect key="frame" x="92.5" y="0.0" width="82" height="54.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="405" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUs-HJ-Vpk">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUs-HJ-Vpk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                 <nil key="textColor"/>
@@ -1062,7 +1062,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-go-nIL">
                                                         <rect key="frame" x="92.5" y="0.0" width="82" height="54.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="405" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-9o-cVx">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-9o-cVx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                 <nil key="textColor"/>

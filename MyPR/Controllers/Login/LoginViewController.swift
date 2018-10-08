@@ -41,9 +41,11 @@ class LoginViewController: UIViewController {
         
         if Auth.auth().currentUser != nil {
             print("PETE: were already signed in")
-            self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
+            
+            DispatchQueue.main.async(){
+                self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
+            }
         }
-
         // Do any additional setup after loading the view.
     }
 

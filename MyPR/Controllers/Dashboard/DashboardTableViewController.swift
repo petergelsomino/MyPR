@@ -129,6 +129,7 @@ class DashboardTableViewController: UITableViewController {
     
     // Send title information to percentages view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("In prepare segue Dashboard to Percentages")
         if segue.identifier == "dashToPercentage" {
             let vc = segue.destination as! LiftTabBarViewController
             vc.title = liftTitle

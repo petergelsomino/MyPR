@@ -58,7 +58,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         
         poundsPicker.isHidden = true
         repsPicker.isHidden = true
-        pickerData = ["200", "300", "400", "500"]
+        pickerData = poundsPickerData()
         repsPickerData = ["1", "2", "3", "5"]
         
         // Connect data:
@@ -206,16 +206,26 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row == 4 {
             poundsSelected.text = pickerData[row]
-            return
-        }
             repsSelected.text = repsPickerData[row]
     }
 
     
     func convertStringToInt(string: String) -> Int {
         return Int(string)!
+    }
+    
+    func poundsPickerData() -> [String] {
+        let min = 0
+        let max = 500
+        let int = 5
+        var weightStringArray: [String] = []
+        
+        for weight in stride(from: min, to: max, by: int) {
+           weightStringArray.append(String(weight))
+        }
+        
+        return weightStringArray
     }
 
 }
