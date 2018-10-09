@@ -206,8 +206,11 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            poundsSelected.text = pickerData[row]
+        if pickerView.tag == 1 {
+             poundsSelected.text = pickerData[row]
+        } else {
             repsSelected.text = repsPickerData[row]
+        }
     }
 
     
