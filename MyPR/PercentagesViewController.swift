@@ -42,20 +42,36 @@ class PercentagesViewController: UIViewController {
         {
         case 0:
             print("First Segment Selected")
-            repMaxFloat = Float(oneRepMax.text!)!
-            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            if oneRepMax.text == "--" {
+                calculatePercentagesBasedOnReps(repMax: 0)
+            } else {
+                repMaxFloat = Float(oneRepMax.text!)!
+                calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            }
         case 1:
             print("second Segment Selected")
-            repMaxFloat = Float(twoRepMax.text!)!
-            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            if twoRepMax.text == "--" {
+                calculatePercentagesBasedOnReps(repMax: 0)
+            } else {
+                repMaxFloat = Float(twoRepMax.text!)!
+                calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            }
         case 2:
             print("third Segment Selected")
-            repMaxFloat = Float(threeRepMax.text!)!
-            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            if threeRepMax.text == "--" {
+                calculatePercentagesBasedOnReps(repMax: 0)
+            } else {
+                repMaxFloat = Float(threeRepMax.text!)!
+                calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            }
         case 3:
             print("forth Segment Selected")
-            repMaxFloat = Float(fiveRepMax.text!)!
-            calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            if fiveRepMax.text == "--" {
+                calculatePercentagesBasedOnReps(repMax: 0)
+            } else {
+                repMaxFloat = Float(fiveRepMax.text!)!
+                calculatePercentagesBasedOnReps(repMax: repMaxFloat)
+            }
         default:
             break
         }
@@ -147,6 +163,7 @@ class PercentagesViewController: UIViewController {
         
         liftRef.observe(.value, with: { snapshot in
             for child in snapshot.children.reversed() {
+                print("onerepmaxforloop")
                 if let snapshot = child as? DataSnapshot,
                     let lift = Lift(snapshot: snapshot) {
                     if lift.reps == reps {
@@ -155,31 +172,45 @@ class PercentagesViewController: UIViewController {
                     }
                 }
             }
+            
+            switch reps {
+            case 1:
+                if weight == 0 {
+                    self.oneRepMax.text = "--"
+                } else {
+                    self.oneRepMax.text = String(weight)
+                    let weightFloat = Float(weight)
+                    self.calculatePercentagesBasedOnReps(repMax: weightFloat)
+                }
+            case 2:
+                if weight == 0 {
+                    self.twoRepMax.text = "--"
+                } else {
+                    self.twoRepMax.text = String(weight)
+                    let weightFloat = Float(weight)
+                    self.calculatePercentagesBasedOnReps(repMax: weightFloat)
+                }
+            case 3:
+                if weight == 0 {
+                    self.threeRepMax.text = "--"
+                } else {
+                    self.threeRepMax.text = String(weight)
+                    let weightFloat = Float(weight)
+                   self.calculatePercentagesBasedOnReps(repMax: weightFloat)
+                }
+            case 5:
+                if weight == 0 {
+                    self.fiveRepMax.text = "--"
+                } else {
+                    self.fiveRepMax.text = String(weight)
+                    let weightFloat = Float(weight)
+                    self.calculatePercentagesBasedOnReps(repMax: weightFloat)
+                }
+            default: break
+            }
         })
         
-        switch reps {
-        case 1:
-            if weight == 0 {
-                oneRepMax.text = "--"
-            } else {
-                oneRepMax.text = String(weight)
-                let weightFloat = Float(weight)
-                calculatePercentagesBasedOnReps(repMax: weightFloat)
-            }
-        case 2:
-            if weight == 0 {
-                twoRepMax.text = "--"
-            } else {
-                twoRepMax.text = String(weight)
-                let weightFloat = Float(weight)
-                calculatePercentagesBasedOnReps(repMax: weightFloat)
-            }
-        case 3:
-            threeRepMax.text = String(weight)
-        case 5:
-            fiveRepMax.text = String(weight)
-        default: break
-        }
+       
         
     }
     
