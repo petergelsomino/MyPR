@@ -88,6 +88,9 @@ class PercentagesViewController: UIViewController {
             self.getLiftHistory(emailString: adjusteduser, liftName: "Back Squat")
             
             self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 1)
+            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 2)
+            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 3)
+            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 5)
             
         }
     
