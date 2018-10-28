@@ -129,5 +129,9 @@ class DashboardTableViewController: UITableViewController {
             completion(currentMaxLift)
         })
     }
+    
+    @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
+          tableView.reloadData()
+    }
 }
 
