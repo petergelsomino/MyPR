@@ -18,6 +18,8 @@ class DashboardTableViewController: UITableViewController {
     var liftTitle = ""
     var ref = Database.database().reference(withPath: "users")
     var user: User!
+    
+    var liftObjects = LiftObjectsArray()
 
     private func loadSampleLifts() {
        // let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
@@ -33,8 +35,7 @@ class DashboardTableViewController: UITableViewController {
             self.user = User(authData: user)
             let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
             let newRef = self.ref.child("/\(emailString)/allLifts")
-        
-            
+
             print(self.getHighestliftValuePerCategory(emailString: emailString, liftNames: ["Back Squat", "Front Squat", "Hack Squat"]))
 //            ref.observe(.value, with: { snapshot in
 //            // 2
@@ -73,24 +74,22 @@ class DashboardTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return liftObjects.liftObjectsArray.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return lifts.count
+         return liftObjects.liftObjectsArray[section].liftSectionObjects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
-
-        let liftcell = lifts[indexPath.row]
-
-        cell.liftLabel.text = liftcell.name
-        cell.maxLiftLabel.text = "\(liftcell.maxLift) LBS"
-        cell.liftDate.text = liftcell.liftDate
+        let liftcell = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        let pounds =
+        
+        cell.liftLabel.text = liftcell
+        cell.maxLiftLabel.text = "170 LBS"
+        cell.liftDate.text = "10/7/2019"
         
         // Get the cell to wrap
         cell.liftLabel.contentMode = .scaleToFill
@@ -99,33 +98,20 @@ class DashboardTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       return liftObjects.liftObjectsArray[section].liftSectionName
     }
     
-    @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? RecordLiftTableViewController, let newLift = sourceViewController.lift {
-            let newIndexPath = IndexPath(row: lifts.count, section: 0)
-            lifts.append(newLift)
-        
-            print(self.user.email)
-            
-            var liftCategory = newLift.name.replacingOccurrences(of: " ", with: "")
-            liftCategory = liftCategory.lowercased()
-            let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
-            let allLiftRef = ref.child("/\(emailString)/allLifts/\(liftCategory)")
-            let newLiftRef = allLiftRef.childByAutoId()
-            
-            newLiftRef.setValue(newLift.toAnyObject())
-            
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
     }
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        liftTitle = lifts[indexPath.row].name
+        liftTitle = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
         performSegue(withIdentifier: "dashToPercentage", sender: self)
     }
+
     
     // Send title information to percentages view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -175,5 +161,55 @@ class DashboardTableViewController: UITableViewController {
         }
         return maxLiftsArray
     }
-
+    
+    
+//    func getOneReplifts(emailString: String, liftName: String) -> [Any] {
+//        var lift = liftName.replacingOccurrences(of: " ", with: "")
+//        lift = lift.lowercased()
+//
+//        let liftRef = self.ref.child("/\(emailString)/allLifts/\(lift)").queryOrdered(byChild: "maxLift")
+//
+//        var weight: Int = 0
+//        var date: String =  ""
+//        var returnArray:[Any]
+//
+//        liftRef.observe(.value, with: { snapshot in
+//            for child in snapshot.children.reversed() {
+//                print("onerepmaxforloop")
+//                if let snapshot = child as? DataSnapshot,
+//                    let lift = Lift(snapshot: snapshot) {
+//                    if lift.reps == 1 {
+//                        returnArray.append(lift.maxLift)
+//                        returnArray.append(lift.liftDate)
+//                        break
+//                    }
+//                }
+//            }
+//            return returnArray
+//        })
+//
+//    }
 }
+
+
+
+
+
+//@IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
+//            if let sourceViewController = sender.source as? RecordLiftTableViewController, let newLift = sourceViewController.lift {
+//                let newIndexPath = IndexPath(row: lifts.count, section: 0)
+//                lifts.append(newLift)
+//
+//                print(self.user.email)
+//    
+//                var liftCategory = newLift.name.replacingOccurrences(of: " ", with: "")
+//                liftCategory = liftCategory.lowercased()
+//                let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+//                let allLiftRef = ref.child("/\(emailString)/allLifts/\(liftCategory)")
+//                let newLiftRef = allLiftRef.childByAutoId()
+//    
+//                newLiftRef.setValue(newLift.toAnyObject())
+//    
+//                tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            }
+//}

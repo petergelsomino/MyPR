@@ -128,6 +128,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Im in here")
         super.prepare(for: segue, sender: sender)
         
         guard let button = sender as? UIBarButtonItem, button === saveButton else {

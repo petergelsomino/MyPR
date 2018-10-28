@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D74542A21389669E45BAB99 /* Pods_MyPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */; };
 		AE05489221519AFC002E4754 /* LiftDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05489121519AFC002E4754 /* LiftDBModel.swift */; };
+		AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */; };
 		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
 		AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */; };
 		AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */; };
@@ -52,6 +53,7 @@
 		2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.release.xcconfig"; sourceTree = "<group>"; };
 		AE05489121519AFC002E4754 /* LiftDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftDBModel.swift; sourceTree = "<group>"; };
+		AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCategories.swift; sourceTree = "<group>"; };
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftTabBarViewController.swift; sourceTree = "<group>"; };
 		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				AEB74384212F571B007A3425 /* Lift.swift */,
 				AECE5E53215D784C00285155 /* User.swift */,
+				AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
 				AECE5E54215D784C00285155 /* User.swift in Sources */,
+				AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */,
 				AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */,
 				AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */,
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
