@@ -26,8 +26,8 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var poundsPicker: UIPickerView!
     @IBOutlet weak var repsPicker: UIPickerView!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var repsSelected: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     //MARK: Actions
     @IBAction func dateChanged(_ sender: Any) {
@@ -128,14 +128,13 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Im in here")
         super.prepare(for: segue, sender: sender)
         
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        
+        print("hi")
         let liftChosen = chosenLift.text
         let liftLbs = convertStringToInt(string: poundsSelected.text!)
         let liftDate = dateSelected.text ?? ""

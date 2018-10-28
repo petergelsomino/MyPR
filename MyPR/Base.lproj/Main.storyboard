@@ -31,19 +31,13 @@
                                             <rect key="frame" x="16" y="8" width="343" height="49.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-r2-qq3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="171.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjk-0J-whE">
-                                                    <rect key="frame" x="114.5" y="0.0" width="114" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-3L-ptR" userLabel="liftDate">
-                                                    <rect key="frame" x="228.5" y="0.0" width="114.5" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjk-0J-whE">
+                                                    <rect key="frame" x="171.5" y="0.0" width="171.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -62,7 +56,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="liftDate" destination="5yh-3L-ptR" id="PAp-Hr-Ob1"/>
                                     <outlet property="liftLabel" destination="xbV-r2-qq3" id="QcB-9D-YYO"/>
                                     <outlet property="maxLiftLabel" destination="Xjk-0J-whE" id="k3C-R2-YPt"/>
                                 </connections>
@@ -374,7 +367,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0Ia-FS-Rbu">
                             <connections>
-                                <segue destination="TXA-6K-fHO" kind="unwind" unwindAction="unwindToDashboardLiftListWithSender:" id="daC-hk-btC"/>
+                                <segue destination="TXA-6K-fHO" kind="unwind" unwindAction="unwindToRecordLiftWithSegue:" id="daC-hk-btC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -386,7 +379,7 @@
                         <outlet property="poundsSelected" destination="hoy-y6-Khq" id="jPe-3I-fVR"/>
                         <outlet property="repsPicker" destination="On2-XV-tvF" id="E7R-3E-mKw"/>
                         <outlet property="repsSelected" destination="vrB-Hl-hmO" id="kyf-m1-iTp"/>
-                        <outlet property="saveButton" destination="0Ia-FS-Rbu" id="5RG-Qp-7ck"/>
+                        <outlet property="saveButton" destination="0Ia-FS-Rbu" id="XuC-b5-8CU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLs-t1-YU3" userLabel="First Responder" sceneMemberID="firstResponder"/>

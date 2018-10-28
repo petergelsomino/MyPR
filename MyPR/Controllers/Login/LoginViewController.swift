@@ -38,8 +38,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if Auth.auth().currentUser != nil {
+            self.currentUser = User(authData: Auth.auth().currentUser!)
             print("PETE: were already signed in")
             
             DispatchQueue.main.async(){
@@ -55,14 +55,15 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   //  MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("In prepare segue Login to Dashboard")
+        if segue.identifier == "alreadyLoggedIn" {
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! DashboardTableViewController
+            svc.user = currentUser
+        }
     }
-    */
+ 
 
 }
