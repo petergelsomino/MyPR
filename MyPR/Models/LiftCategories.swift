@@ -17,7 +17,7 @@ struct LiftObjects {
 struct LiftObjectsArray {
     var liftObjectsArray = [
         LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat"]),
-        LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power", "Hang Power", "Power"]),
-        LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle", "Full Power", "Hang Power"])
+        LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Squat Power Clean", "Hang Power Clean", "Power Clean"]),
+        LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Squat Power Snatch", "Hang Power Snatch"])
     ]
 }
