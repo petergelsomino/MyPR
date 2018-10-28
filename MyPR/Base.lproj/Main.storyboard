@@ -367,7 +367,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0Ia-FS-Rbu">
                             <connections>
-                                <segue destination="TXA-6K-fHO" kind="unwind" unwindAction="unwindToRecordLiftWithSegue:" id="daC-hk-btC"/>
+                                <segue destination="TXA-6K-fHO" kind="unwind" unwindAction="unwindToDashboardLiftListWithSender:" id="FvA-0D-t2r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

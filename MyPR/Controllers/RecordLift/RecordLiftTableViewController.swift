@@ -18,6 +18,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     var repsPickerData: [String] = [String]()
     var lift: Lift?
     var user: User!
+    var ref = Database.database().reference(withPath: "users")
     
     //MARK Outlets
     @IBOutlet weak var chosenLift: UILabel!
@@ -134,14 +135,22 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-        print("hi")
+
         let liftChosen = chosenLift.text
         let liftLbs = convertStringToInt(string: poundsSelected.text!)
         let liftDate = dateSelected.text ?? ""
         let reps = convertStringToInt(string: repsSelected.text!)
-        let user = self.user.email
-        print("PETE: --> \(user)")
+        let user = self.user.email.replacingOccurrences(of: ".", with: "-")
+
         lift = Lift(name: liftChosen!, maxLift: liftLbs, liftDate: liftDate, reps: reps, recordedByUser: user)
+        
+        var liftCategory = liftChosen!.replacingOccurrences(of: " ", with: "")
+        liftCategory = liftCategory.lowercased()
+        
+        let allLiftRef = ref.child("/\(user)/allLifts/\(String(describing: liftCategory))")
+        let newLiftRef = allLiftRef.childByAutoId()
+        
+        newLiftRef.setValue(lift?.toAnyObject())
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
