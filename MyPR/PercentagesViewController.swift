@@ -85,11 +85,13 @@ class PercentagesViewController: UIViewController {
             guard let user = user else { return }
             self.user = User(authData: user)
             let adjusteduser = self.user.email.replacingOccurrences(of: ".", with: "-")
-            
+
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 2)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 3)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 5)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 1)
+            
+            
             
         }
     
@@ -176,6 +178,7 @@ class PercentagesViewController: UIViewController {
             case 1:
                 if weight == 0 {
                     self.oneRepMax.text = "--"
+                    self.calculatePercentagesBasedOnReps(repMax: 0)
                 } else {
                     self.oneRepMax.text = String(weight)
                     let weightFloat = Float(weight)
