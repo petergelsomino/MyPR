@@ -21,7 +21,6 @@ class DashboardTableViewController: UITableViewController {
     
     var liftObjects = LiftObjectsArray()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print("inside view did load")
