@@ -21,12 +21,6 @@ class DashboardTableViewController: UITableViewController {
     
     var liftObjects = LiftObjectsArray()
 
-    private func loadSampleLifts() {
-       // let lift1 = Lift(name: "Back Squat", maxLift: 175, liftDate: "5/6/2018", recordedByUser: "plgelsomino@gmail.com")
-        
-//        lifts += [lift1]
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +96,12 @@ class DashboardTableViewController: UITableViewController {
         if segue.identifier == "dashToPercentage" {
             let vc = segue.destination as! LiftTabBarViewController
             vc.title = liftTitle
+
+            let pvc = vc.childViewControllers[0] as! PercentagesViewController
+            pvc.titleName = liftTitle
+            
+            let lhvc = vc.childViewControllers[1] as! LiftHistoryViewController
+            lhvc.titleName = liftTitle
         }
     }
     
