@@ -9,20 +9,11 @@
 import UIKit
 
 class ChooseLiftTableViewController: UITableViewController {
-    
-    // MARK: Variables
-    struct LiftObjects {
-        var liftSectionName: String
-        var liftSectionObjects: [String]
-    }
 
+    // MARK: Variables
     var liftName = ""
-    var liftObjectsArray = [
-        LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat"]),
-        LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Clean", "Full Power Clean", "Hang Power Clean", "Power Clean"]),
-        LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Full Power Snatch", "Hang Power Snatch"])
-    ]
-    
+    var liftObjects = LiftObjectsArray()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,7 +23,7 @@ class ChooseLiftTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return liftObjectsArray.count
+        return liftObjects.liftObjectsArray.count
 
     }
     
@@ -41,24 +32,25 @@ class ChooseLiftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return liftObjectsArray[section].liftSectionObjects.count
+        return liftObjects.liftObjectsArray[section].liftSectionObjects.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return liftObjectsArray[section].liftSectionName
+        return liftObjects.liftObjectsArray[section].liftSectionName
+
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath)
         
-        cell.textLabel?.text = liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        cell.textLabel?.text = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        liftName = liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        liftName = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
         performSegue(withIdentifier: "unwindToRecordLift", sender: self)
 
     }
