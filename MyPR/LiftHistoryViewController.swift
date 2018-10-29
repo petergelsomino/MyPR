@@ -13,6 +13,7 @@ import FirebaseAuth
 class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var titleName: String?
     
     // MARK: Properties
     var lifts = [Lift]()

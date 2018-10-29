@@ -85,12 +85,11 @@ class PercentagesViewController: UIViewController {
             guard let user = user else { return }
             self.user = User(authData: user)
             let adjusteduser = self.user.email.replacingOccurrences(of: ".", with: "-")
-            self.getLiftHistory(emailString: adjusteduser, liftName: "Back Squat")
             
-            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 2)
-            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 3)
-            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 5)
-            self.getOneReplifts(emailString: adjusteduser, liftName: "Back Squat", reps: 1)
+            self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 2)
+            self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 3)
+            self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 5)
+            self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 1)
             
         }
     
