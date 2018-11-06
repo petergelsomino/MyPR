@@ -105,8 +105,6 @@ class DashboardTableViewController: UITableViewController {
     }
     
     func getHighestliftValuePerCategory(emailString: String, liftName: String, completion: @escaping (Int) -> ()) {
-        let group = DispatchGroup()
-        group.enter()
 
         var liftString = liftName.replacingOccurrences(of: " ", with: "")
         liftString = liftString.lowercased()
@@ -117,9 +115,6 @@ class DashboardTableViewController: UITableViewController {
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let temp = Lift(snapshot: snapshot) {
-                    print("Pete in temp snapshot")
-                    print("Current maxLift = \(currentMaxLift)")
-                    print("Current maxLift = \(temp.maxLift)")
                     if currentMaxLift <= temp.maxLift {
                         currentMaxLift = temp.maxLift
                     }

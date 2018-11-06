@@ -32,6 +32,7 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             print("End of Auth")
         }
         print("Lift History End of View Did Load")
+        print("Lift Count = \(lifts.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +49,7 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("In Lift History Table View cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "LiftHistoryCell", for: indexPath) as! LiftHistoryTableViewCell
+        let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
         
         let liftcell = lifts[indexPath.row]
         
@@ -56,6 +58,25 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         cell.repsHistoryLabel.text = "\(liftcell.reps)"
         
         return cell
+    }
+    
+    func getLiftHistory(emailString: String, liftName: String, completion: @escaping ([Lift]) -> ()) {
+        
+        var liftString = liftName.replacingOccurrences(of: " ", with: "")
+        liftString = liftString.lowercased()
+        
+        var allLifts: [Lift] = []
+        
+        let liftRef = self.ref.child("/\(emailString)/allLifts/\(liftString)").queryOrdered(byChild: "liftDate")
+        liftRef.observe(.value, with: { snapshot in
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let lift = Lift(snapshot: snapshot) {
+                    allLifts.append(lift)
+                }
+            }
+            completion(allLifts)
+        })
     }
     
 }
