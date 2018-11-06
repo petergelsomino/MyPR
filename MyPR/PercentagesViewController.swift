@@ -91,12 +91,8 @@ class PercentagesViewController: UIViewController {
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 5)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 1)
             
-            
-            
+            self.getLiftHistory(emailString: adjusteduser, liftName: self.titleName)
         }
-    
-//        repMaxFloat = Float(oneRepMax.text!)!
-//        calculatePercentagesBasedOnReps(repMax: repMaxFloat)
     }
 
     override func didReceiveMemoryWarning() {
