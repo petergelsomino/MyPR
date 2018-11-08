@@ -2,23 +2,11 @@
 //  Extensions.swift
 //  MyPR
 //
-//  Created by Peter Gelsomino on 9/8/18.
+//  Created by Peter Gelsomino on 11/5/18.
 //  Copyright © 2018 PeteGels. All rights reserved.
 //
 
 import Foundation
-import UIKit
-
-extension Date
-{
-    init(dateString:String) {
-        let dateStringFormatter = DateFormatter()
-        dateStringFormatter.dateFormat = "yyyy-MM-dd"
-        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
-        let d = dateStringFormatter.date(from: dateString)!
-        self.init(timeInterval:0, since:d)
-    }
-}
 
 extension UIColor {
     convenience init(hexString: String) {
@@ -39,7 +27,3 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
-
-//class Colors {
-////    let backgroundColor = UIColor(hexString: "#757575")
-//}

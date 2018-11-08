@@ -36,6 +36,19 @@ class PercentagesViewController: UIViewController {
     @IBOutlet weak var segmentedControlLabel: UISegmentedControl!
     @IBOutlet weak var navigationTitle: UINavigationItem!
     
+    @IBOutlet weak var maxLiftsUIView: UIView!
+    @IBOutlet weak var percentagesUIView: UIView!
+    
+    @IBOutlet weak var maxLiftsLabel: UILabel!
+    @IBOutlet weak var percentagesLiftsLabel: UILabel!
+    
+    @IBOutlet weak var oneRepLabel: UILabel!
+    @IBOutlet weak var twoRepLabel: UILabel!
+    @IBOutlet weak var threeRepLabel: UILabel!
+    @IBOutlet weak var fiveRepLabel: UILabel!
+    
+    
+    
     // MARK: Actions
     @IBAction func segmentedControlAction(_ sender: Any) {
         switch segmentedControlLabel.selectedSegmentIndex
@@ -80,6 +93,23 @@ class PercentagesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("In Percentages View Controller")
+        self.view.backgroundColor = UIColor(hexString: "#2E4057")
+        self.maxLiftsUIView.backgroundColor = UIColor(hexString: "#2E4057")
+        self.percentagesUIView.backgroundColor = UIColor(hexString: "#2E4057")
+        self.maxLiftsLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.percentagesLiftsLabel.textColor = UIColor(hexString: "#F7C59F")
+        
+        self.oneRepMax.textColor = UIColor(hexString: "#82D4BB")
+        self.twoRepMax.textColor = UIColor(hexString: "#82D4BB")
+        self.threeRepMax.textColor = UIColor(hexString: "#82D4BB")
+        self.fiveRepMax.textColor = UIColor(hexString: "#82D4BB")
+        
+        self.oneRepLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.twoRepLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.threeRepLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.fiveRepLabel.textColor = UIColor(hexString: "#F7C59F")
+        
+        self.segmentedControlLabel.tintColor = UIColor(hexString: "#82D4BB")
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
