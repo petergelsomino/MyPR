@@ -14,6 +14,7 @@
 		AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */; };
 		AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */; };
 		AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */; };
+		AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */; };
 		AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */; };
 		AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74356212F56E9007A3425 /* AppDelegate.swift */; };
 		AEB7435C212F56EA007A3425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB7435A212F56EA007A3425 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
 		AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryViewController.swift; sourceTree = "<group>"; };
 		AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNavViewController.swift; sourceTree = "<group>"; };
 		AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLiftTableViewController.swift; sourceTree = "<group>"; };
 		AEB74353212F56E9007A3425 /* MyPR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB74356212F56E9007A3425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
 				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
+				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */,
 				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
 				AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */,
+				AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */,
 				AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

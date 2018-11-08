@@ -38,6 +38,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(hexString: "#2E4057")
+        
         if Auth.auth().currentUser != nil {
             self.currentUser = User(authData: Auth.auth().currentUser!)
             print("PETE: were already signed in")

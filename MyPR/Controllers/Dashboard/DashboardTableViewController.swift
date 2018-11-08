@@ -23,8 +23,9 @@ class DashboardTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
+            
         print("inside view did load")
-        print("User Here \(self.user.email)")
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
@@ -70,7 +71,9 @@ class DashboardTableViewController: UITableViewController {
         // Get the cell to wrap
         cell.liftLabel.contentMode = .scaleToFill
         cell.liftLabel.numberOfLines = 0
-
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
+        cell.liftLabel.textColor = UIColor(hexString: "#F7C59F")
+        cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
         return cell
     }
     
@@ -79,7 +82,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
 
     
@@ -122,6 +125,25 @@ class DashboardTableViewController: UITableViewController {
             }
             completion(currentMaxLift)
         })
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView:UIView = UIView()
+//        headerView.backgroundColor = UIColor(hexString: "#2E4057")
+//        return headerView
+//    }
+//
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")
+            if let textlabel = headerView.textLabel {
+                textlabel.font = UIFont(name: "Copperplate-Bold", size: 20)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 53
     }
     
     @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
