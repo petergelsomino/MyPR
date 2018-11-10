@@ -47,6 +47,14 @@ class PercentagesViewController: UIViewController {
     @IBOutlet weak var threeRepLabel: UILabel!
     @IBOutlet weak var fiveRepLabel: UILabel!
     
+    @IBOutlet weak var seventyPercentTextLabel: UILabel!
+    @IBOutlet weak var seventyFivePercentTextlLabel: UILabel!
+    @IBOutlet weak var eightyPercentTextLabel: UILabel!
+    @IBOutlet weak var eightyFivePercentTextLabel: UILabel!
+    @IBOutlet weak var nintyPercentTextLabel: UILabel!
+    @IBOutlet weak var nintyFivePercentLabel: UILabel!
+    @IBOutlet weak var oneHundredPercentTextLabel: UILabel!
+    @IBOutlet weak var oneHundredFivePercentTextLabel: UILabel!
     
     
     // MARK: Actions
@@ -109,7 +117,25 @@ class PercentagesViewController: UIViewController {
         self.threeRepLabel.textColor = UIColor(hexString: "#F7C59F")
         self.fiveRepLabel.textColor = UIColor(hexString: "#F7C59F")
         
-        self.segmentedControlLabel.tintColor = UIColor(hexString: "#82D4BB")
+        self.seventyPercentLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.seventyFivePercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.eightyPercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.eightyFivePercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.nintyPercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.nintyFivePercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.oneHundredPercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        self.oneHundredFivePercentageLabel.textColor = UIColor(hexString: "#82D4BB")
+        
+        self.seventyPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.seventyFivePercentTextlLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.eightyPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.eightyFivePercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.nintyPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.nintyFivePercentLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.oneHundredPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+         self.oneHundredFivePercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        
+        self.segmentedControlLabel.tintColor = UIColor(hexString: "#F7C59F")
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }

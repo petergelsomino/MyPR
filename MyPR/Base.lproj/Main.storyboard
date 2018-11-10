@@ -102,17 +102,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="afy-5i-dac">
-                                                    <rect key="frame" x="24" y="15.5" width="327" height="25.5"/>
+                                                    <rect key="frame" x="24" y="20.5" width="327" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGx-dJ-uuq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/12/2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJw-M4-b0d">
-                                                            <rect key="frame" x="163.5" y="0.0" width="163.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <rect key="frame" x="163.5" y="0.0" width="163.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -159,17 +159,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="872-vj-dq7">
-                                                    <rect key="frame" x="24" y="19" width="327" height="25.5"/>
+                                                    <rect key="frame" x="24" y="19" width="327" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzU-Gp-Dox">
-                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back Squat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wc-28-hXL">
-                                                            <rect key="frame" x="163.5" y="0.0" width="163.5" height="25.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                            <rect key="frame" x="163.5" y="0.0" width="163.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -194,32 +194,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzM-cT-5mU">
-                                                    <rect key="frame" x="24" y="12" width="327" height="27.5"/>
+                                                    <rect key="frame" x="24" y="19" width="327" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMZ-OI-8fI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="27.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="220" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="220" id="6t3-Ft-ujc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-oq-7uu">
-                                                            <rect key="frame" x="220" y="0.0" width="107" height="27.5"/>
+                                                            <rect key="frame" x="220" y="0.0" width="107" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="175" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoy-y6-Khq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="sDu-bH-GwJ"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LBS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kby-WA-yGy" userLabel="LBS">
-                                                                    <rect key="frame" x="68" y="0.0" width="39" height="27.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <rect key="frame" x="67" y="0.0" width="40" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -269,20 +269,20 @@
                                                     <rect key="frame" x="24" y="11" width="327" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1O-Zl-1qE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="101.5" height="38"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrB-Hl-hmO">
-                                                            <rect key="frame" x="116.5" y="0.0" width="143" height="38"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                            <rect key="frame" x="143.5" y="0.0" width="114" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjM-1o-0fh" userLabel="LBS">
-                                                            <rect key="frame" x="274.5" y="0.0" width="52.5" height="38"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjM-1o-0fh">
+                                                            <rect key="frame" x="272.5" y="0.0" width="54.5" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -372,13 +372,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chooseLiftTextLabel" destination="xzU-Gp-Dox" id="6d3-AB-5TW"/>
+                        <outlet property="chooseRepsTextLabel" destination="h1O-Zl-1qE" id="L8P-Ft-bSH"/>
+                        <outlet property="chooseWeightTextLabel" destination="QMZ-OI-8fI" id="Aam-PG-aDg"/>
                         <outlet property="chosenLift" destination="1Wc-28-hXL" id="54C-p2-Ium"/>
+                        <outlet property="dateOfLiftTextLabel" destination="SGx-dJ-uuq" id="ksp-tL-qX4"/>
                         <outlet property="datePicker" destination="4xq-wR-8zg" id="hap-lx-Idp"/>
                         <outlet property="dateSelected" destination="sJw-M4-b0d" id="WeY-Sc-h5m"/>
+                        <outlet property="lbsTextLabel" destination="kby-WA-yGy" id="UP5-Bu-oxr"/>
                         <outlet property="poundsPicker" destination="dEa-M1-Bf5" id="1xo-6r-yLU"/>
                         <outlet property="poundsSelected" destination="hoy-y6-Khq" id="jPe-3I-fVR"/>
                         <outlet property="repsPicker" destination="On2-XV-tvF" id="E7R-3E-mKw"/>
                         <outlet property="repsSelected" destination="vrB-Hl-hmO" id="kyf-m1-iTp"/>
+                        <outlet property="repsTextLabel" destination="FjM-1o-0fh" id="yOZ-9R-kfm"/>
                         <outlet property="saveButton" destination="0Ia-FS-Rbu" id="XuC-b5-8CU"/>
                     </connections>
                 </tableViewController>
@@ -757,22 +763,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGt-qv-EL0">
-                                <rect key="frame" x="0.0" y="153.5" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="153.5" width="375" height="75.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bmZ-1K-mqS">
-                                        <rect key="frame" x="8" y="8" width="359" height="59"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="59.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XTA-AT-SCQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="435" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djf-LC-fV6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 REP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM7-4G-Q6O">
-                                                        <rect key="frame" x="0.0" y="40.5" width="82.5" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="41" width="82.5" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -785,16 +791,16 @@
                                                 <viewLayoutGuide key="safeArea" id="Q9s-Mm-zwO"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QLi-TJ-S7V">
-                                                <rect key="frame" x="92.5" y="0.0" width="82" height="59"/>
+                                                <rect key="frame" x="92.5" y="0.0" width="82" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="370" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIp-vs-gXd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 REP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-Tm-668">
-                                                        <rect key="frame" x="0.0" y="40.5" width="82" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="41" width="82" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -811,16 +817,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sdQ-yo-77q">
-                                                <rect key="frame" x="184.5" y="0.0" width="82.5" height="59"/>
+                                                <rect key="frame" x="184.5" y="0.0" width="82.5" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="260" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArN-8F-QLA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 REP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaV-3J-HyN">
-                                                        <rect key="frame" x="0.0" y="40.5" width="82.5" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="41" width="82.5" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -838,16 +844,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fpA-2Y-PGN">
-                                                <rect key="frame" x="277" y="0.0" width="82" height="59"/>
+                                                <rect key="frame" x="277" y="0.0" width="82" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="225" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-zN-iKf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="35.5"/>
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82" height="36"/>
+                                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 REP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vR-jA-R1s">
-                                                        <rect key="frame" x="0.0" y="40.5" width="82" height="18.5"/>
+                                                        <rect key="frame" x="0.0" y="41" width="82" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -876,13 +882,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERCENTAGES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofI-Vi-RMt">
-                                <rect key="frame" x="8" y="264.5" width="359" height="25.5"/>
+                                <rect key="frame" x="8" y="265" width="359" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XaU-qF-s6d">
-                                <rect key="frame" x="8" y="306" width="359" height="29"/>
+                                <rect key="frame" x="8" y="306.5" width="359" height="29"/>
                                 <segments>
                                     <segment title="1 REP"/>
                                     <segment title="2 REP"/>
@@ -894,26 +900,26 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYh-c8-78r">
-                                <rect key="frame" x="0.0" y="350" width="375" height="166"/>
+                                <rect key="frame" x="0.0" y="350.5" width="375" height="161"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="S44-f5-5U5">
-                                        <rect key="frame" x="8" y="16" width="359" height="134"/>
+                                        <rect key="frame" x="8" y="16" width="359" height="129"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5o4-eD-RWT" userLabel="PercentagesOneStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="52"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TFX-LQ-oCt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="54.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-35-CJ0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8k-1p-VzJ">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82.5" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82.5" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -925,17 +931,17 @@
                                                         <viewLayoutGuide key="safeArea" id="S9S-Xp-Hff"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i85-Mb-2fo">
-                                                        <rect key="frame" x="92.5" y="0.0" width="82" height="54.5"/>
+                                                        <rect key="frame" x="92.5" y="0.0" width="82" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUs-HJ-Vpk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3r-7B-6B8">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -946,17 +952,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KCv-Bg-8xm">
-                                                        <rect key="frame" x="184.5" y="0.0" width="82.5" height="54.5"/>
+                                                        <rect key="frame" x="184.5" y="0.0" width="82.5" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-pl-ffq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xk-Jh-Tnr">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82.5" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82.5" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -967,17 +973,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-pe-QJr">
-                                                        <rect key="frame" x="277" y="0.0" width="82" height="54.5"/>
+                                                        <rect key="frame" x="277" y="0.0" width="82" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3d-Vd-5q4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPp-y4-40s">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -991,20 +997,20 @@
                                                 <viewLayoutGuide key="safeArea" id="01U-TV-1x9"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uca-U1-XLh" userLabel="PercentagesTwoStackView">
-                                                <rect key="frame" x="0.0" y="79.5" width="359" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="77" width="359" height="52"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yzh-lV-dOc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="54.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-uZ-qSD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsR-Hy-yNa">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82.5" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82.5" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1016,17 +1022,17 @@
                                                         <viewLayoutGuide key="safeArea" id="4Qb-KM-GK7"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Liv-go-nIL">
-                                                        <rect key="frame" x="92.5" y="0.0" width="82" height="54.5"/>
+                                                        <rect key="frame" x="92.5" y="0.0" width="82" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-9o-cVx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="95%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzt-96-Gd6">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1037,17 +1043,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-Tl-rOg">
-                                                        <rect key="frame" x="184.5" y="0.0" width="82.5" height="54.5"/>
+                                                        <rect key="frame" x="184.5" y="0.0" width="82.5" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="872-Ma-HV7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiL-jP-Frn">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82.5" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82.5" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1058,17 +1064,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-un-rMw">
-                                                        <rect key="frame" x="277" y="0.0" width="82" height="54.5"/>
+                                                        <rect key="frame" x="277" y="0.0" width="82" height="52"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-Hn-Dz0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="31.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIg-Zw-96s">
-                                                                <rect key="frame" x="0.0" y="36.5" width="82" height="18"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <rect key="frame" x="0.0" y="33.5" width="82" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1117,23 +1123,31 @@
                     <tabBarItem key="tabBarItem" title="Percentages" id="hKo-Eu-dRG"/>
                     <navigationItem key="navigationItem" title="Title" id="XG6-Xp-937"/>
                     <connections>
+                        <outlet property="eightyFivePercentTextLabel" destination="LPp-y4-40s" id="IgQ-so-uED"/>
                         <outlet property="eightyFivePercentageLabel" destination="U3d-Vd-5q4" id="bY8-Hg-anD"/>
+                        <outlet property="eightyPercentTextLabel" destination="8xk-Jh-Tnr" id="P0U-Yg-J3G"/>
                         <outlet property="eightyPercentageLabel" destination="I3V-pl-ffq" id="YaV-8Z-gUo"/>
                         <outlet property="fiveRepLabel" destination="2vR-jA-R1s" id="49d-6E-Nwx"/>
                         <outlet property="fiveRepMax" destination="SBE-zN-iKf" id="aQp-SG-O0x"/>
                         <outlet property="maxLiftsLabel" destination="es1-RO-dkU" id="aWV-aM-b1b"/>
                         <outlet property="maxLiftsUIView" destination="fGt-qv-EL0" id="KtB-Vl-cmK"/>
+                        <outlet property="nintyFivePercentLabel" destination="yzt-96-Gd6" id="M4o-tz-l3U"/>
                         <outlet property="nintyFivePercentageLabel" destination="sLU-9o-cVx" id="0tD-Rb-8me"/>
+                        <outlet property="nintyPercentTextLabel" destination="DsR-Hy-yNa" id="udR-ET-7N6"/>
                         <outlet property="nintyPercentageLabel" destination="7yU-uZ-qSD" id="jUq-Uo-g4a"/>
+                        <outlet property="oneHundredFivePercentTextLabel" destination="MIg-Zw-96s" id="ZMD-jE-5QG"/>
                         <outlet property="oneHundredFivePercentageLabel" destination="cFD-Hn-Dz0" id="Jj2-ng-hpS"/>
+                        <outlet property="oneHundredPercentTextLabel" destination="NiL-jP-Frn" id="hgp-Vp-euu"/>
                         <outlet property="oneHundredPercentageLabel" destination="872-Ma-HV7" id="sH8-dN-fzr"/>
                         <outlet property="oneRepLabel" destination="FM7-4G-Q6O" id="N1U-vj-7NU"/>
                         <outlet property="oneRepMax" destination="djf-LC-fV6" id="wj0-a9-3qC"/>
                         <outlet property="percentagesLiftsLabel" destination="ofI-Vi-RMt" id="bYC-0H-NMk"/>
                         <outlet property="percentagesUIView" destination="QYh-c8-78r" id="kjr-V5-ezE"/>
                         <outlet property="segmentedControlLabel" destination="XaU-qF-s6d" id="Bap-Qv-aq8"/>
+                        <outlet property="seventyFivePercentTextlLabel" destination="m3r-7B-6B8" id="6A2-Y5-tpw"/>
                         <outlet property="seventyFivePercentageLabel" destination="WUs-HJ-Vpk" id="yOT-5M-coF"/>
-                        <outlet property="seventyPercentLabel" destination="yZ7-35-CJ0" id="B1d-x0-BNN"/>
+                        <outlet property="seventyPercentLabel" destination="yZ7-35-CJ0" id="tzl-0J-J3p"/>
+                        <outlet property="seventyPercentTextLabel" destination="L8k-1p-VzJ" id="F6D-9K-79G"/>
                         <outlet property="threeRepLabel" destination="jaV-3J-HyN" id="vbf-Ow-qZy"/>
                         <outlet property="threeRepMax" destination="ArN-8F-QLA" id="yMT-m7-Ahx"/>
                         <outlet property="twoRepLabel" destination="3PT-Tm-668" id="Pis-Ba-1Jc"/>

@@ -127,12 +127,6 @@ class DashboardTableViewController: UITableViewController {
         })
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView:UIView = UIView()
-//        headerView.backgroundColor = UIColor(hexString: "#2E4057")
-//        return headerView
-//    }
-//
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")

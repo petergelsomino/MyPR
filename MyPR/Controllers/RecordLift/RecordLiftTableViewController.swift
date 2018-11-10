@@ -29,6 +29,13 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     @IBOutlet weak var repsPicker: UIPickerView!
     @IBOutlet weak var repsSelected: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var lbsTextLabel: UILabel!
+    @IBOutlet weak var repsTextLabel: UILabel!
+    
+    @IBOutlet weak var chooseLiftTextLabel: UILabel!
+    @IBOutlet weak var dateOfLiftTextLabel: UILabel!
+    @IBOutlet weak var chooseRepsTextLabel: UILabel!
+    @IBOutlet weak var chooseWeightTextLabel: UILabel!
     
     //MARK: Actions
     @IBAction func dateChanged(_ sender: Any) {
@@ -49,6 +56,44 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Text Labels Color
+        self.dateOfLiftTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.chooseLiftTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.chooseRepsTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.chooseWeightTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.lbsTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.repsTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        
+        self.dateSelected.textColor = UIColor(hexString: "#F7C59F")
+        self.repsSelected.textColor = UIColor(hexString: "#F7C59F")
+        self.poundsSelected.textColor = UIColor(hexString: "#F7C59F")
+        
+        self.chooseWeightTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.chosenLift.textColor = UIColor(hexString: "#F7C59F")
+        
+        
+        // Picker Colors
+        self.datePicker.backgroundColor = UIColor(hexString: "#2E4057")
+        self.datePicker.setValue(UIColor(hexString: "#F7C59F"), forKey: "textColor")
+
+        self.poundsPicker.backgroundColor = UIColor(hexString: "#2E4057")
+        self.poundsPicker.setValue(UIColor(hexString: "#F7C59F"), forKey: "textColor")
+        
+        self.repsPicker.backgroundColor =  UIColor(hexString: "#2E4057")
+        self.repsPicker.setValue(UIColor(hexString: "#F7C59F"), forKey: "textColor")
+        
+        self.datePicker.setValue(UIColor(hexString: "#F7C59F"), forKey: "textColor")
+
+        
+        let nav = self.navigationController
+        nav?.navigationBar.barTintColor = UIColor(hexString: "#82D4BB")
+        nav?.navigationBar.tintColor = UIColor.white
+        nav?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(hexString: "#2E4057"), NSAttributedStringKey.font: UIFont(name: "Copperplate-Bold", size: 40)!]
+        
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
+        
+        
         self.chosenLift.text = self.chosenLift.text
         
         datePicker.datePickerMode = .date
@@ -126,6 +171,15 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        if let headerView = view as? UITableViewHeaderFooterView {
+//            headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")
+//            if let textlabel = headerView.textLabel {
+//                textlabel.font = UIFont(name: "Copperplate-Bold", size: 20)
+//            }
+//        }
+//    }
     
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
