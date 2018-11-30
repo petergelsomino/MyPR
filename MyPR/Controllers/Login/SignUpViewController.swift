@@ -16,6 +16,17 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var retypePasswordTextField: UITextField!
     
+    var currentUser: User?
+    
+    //UI Outlets
+    @IBOutlet weak var welcomeButtonTextLabel: UILabel!
+    @IBOutlet weak var prSubTitleLabel: UILabel!
+    @IBOutlet weak var prSubTitleLabel2: UILabel!
+    
+    @IBOutlet weak var registerButtonTextLabel: UIButton!
+    @IBOutlet weak var backToSignInButtonLabel: UIButton!
+    
+    
     @IBAction func registerButton(_ sender: Any) {
         
         if passwordTextField.text != retypePasswordTextField.text {
@@ -28,6 +39,7 @@ class SignUpViewController: UIViewController {
         else{
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
                 if error == nil {
+                    guard let user = user else { return }
                     self.performSegue(withIdentifier: "signUpViaRegisterSegue", sender: self)
                 }
                 else{
@@ -40,7 +52,6 @@ class SignUpViewController: UIViewController {
             }
         }
         
-        
     }
     
     @IBAction func backToSignInButton(_ sender: Any) {
@@ -48,7 +59,13 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.welcomeButtonTextLabel.textColor = UIColor(hexString: "82D4BB")
+        self.prSubTitleLabel.textColor = UIColor(hexString: "F7C59F")
+        self.prSubTitleLabel2.textColor = UIColor(hexString: "F7C59F")
+        self.registerButtonTextLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
+        self.backToSignInButtonLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
+    
+        self.view.backgroundColor = UIColor(hexString: "#2E4057")
         // Do any additional setup after loading the view.
     }
 
@@ -57,6 +74,14 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //  MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signUpViaRegisterSegue" {
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! DashboardTableViewController
+            svc.user = self.currentUser
+        }
+    }
 
     /*
     // MARK: - Navigation
