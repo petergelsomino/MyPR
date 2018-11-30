@@ -100,6 +100,7 @@ class PercentagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         print("In Percentages View Controller")
         self.view.backgroundColor = UIColor(hexString: "#2E4057")
         self.maxLiftsUIView.backgroundColor = UIColor(hexString: "#2E4057")

@@ -67,13 +67,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My PRs" id="0ef-uP-VEy">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
                             <connections>
                                 <segue destination="HRa-mX-8DZ" kind="popoverPresentation" identifier="" popoverAnchorBarButtonItem="5Se-nd-58w" id="FFc-Dh-UdW">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="7if-mp-Gkd"/>
                     </navigationItem>
                     <connections>
                         <segue destination="Yyh-H8-hII" kind="show" identifier="dashToPercentage" id="3Fy-ih-lb2"/>
@@ -470,27 +471,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNu-Y5-sCc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="60.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uZ1-vx-2CY">
-                                        <rect key="frame" x="16" y="16" width="343" height="24"/>
+                                        <rect key="frame" x="16" y="16" width="343" height="28.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LBS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMV-Sc-6d3">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="LBS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMV-Sc-6d3">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-IL-lGp">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-IL-lGp">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3L-EF-DUr">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="28"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -498,14 +496,14 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="uZ1-vx-2CY" secondAttribute="bottom" constant="16" id="HO3-XT-Afg"/>
-                                    <constraint firstAttribute="trailing" secondItem="uZ1-vx-2CY" secondAttribute="trailing" constant="16" id="IAf-C9-HuB"/>
-                                    <constraint firstItem="uZ1-vx-2CY" firstAttribute="leading" secondItem="QNu-Y5-sCc" secondAttribute="leading" constant="16" id="t7n-pX-M7h"/>
-                                    <constraint firstItem="uZ1-vx-2CY" firstAttribute="top" secondItem="QNu-Y5-sCc" secondAttribute="top" constant="16" id="zSu-yj-IuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="uZ1-vx-2CY" secondAttribute="trailing" constant="16" id="Eex-1j-cVb"/>
+                                    <constraint firstItem="uZ1-vx-2CY" firstAttribute="leading" secondItem="QNu-Y5-sCc" secondAttribute="leading" constant="16" id="iEm-xh-Xc0"/>
+                                    <constraint firstItem="uZ1-vx-2CY" firstAttribute="top" secondItem="QNu-Y5-sCc" secondAttribute="top" constant="16" id="wKq-B7-OTw"/>
+                                    <constraint firstAttribute="bottom" secondItem="uZ1-vx-2CY" secondAttribute="bottom" constant="16" id="xgc-2n-BQf"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iFy-Bf-pSW">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="124.5" width="375" height="493.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LiftHistoryCell" rowHeight="66" id="9yP-eW-OHC" customClass="LiftHistoryTableViewCell" customModule="MyPR" customModuleProvider="target">
@@ -515,24 +513,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wQC-ba-uQb">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="wQC-ba-uQb">
                                                     <rect key="frame" x="23" y="19" width="329" height="28"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="178" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-Gm-xyU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="178" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-Gm-xyU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="28"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="23"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCW-Z2-2LS">
-                                                            <rect key="frame" x="109.5" y="0.0" width="110" height="28"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <rect key="frame" x="74" y="0.0" width="25" height="28"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="23"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sep 7, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-zW-yfX">
-                                                            <rect key="frame" x="219.5" y="0.0" width="109.5" height="28"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sep 7, 2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-zW-yfX">
+                                                            <rect key="frame" x="99" y="0.0" width="230" height="28"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="23"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -540,14 +538,14 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="wQC-ba-uQb" secondAttribute="bottom" constant="8" id="Zzm-FF-cie"/>
-                                                <constraint firstItem="wQC-ba-uQb" firstAttribute="top" secondItem="VRw-cN-p8c" secondAttribute="topMargin" constant="8" id="d5A-Mi-Do8"/>
-                                                <constraint firstItem="wQC-ba-uQb" firstAttribute="leading" secondItem="VRw-cN-p8c" secondAttribute="leadingMargin" constant="8" id="jEy-c1-KCJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wQC-ba-uQb" secondAttribute="trailing" constant="8" id="jKY-4e-HxT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wQC-ba-uQb" secondAttribute="bottom" constant="8" id="DAq-TY-lrA"/>
+                                                <constraint firstItem="wQC-ba-uQb" firstAttribute="leading" secondItem="VRw-cN-p8c" secondAttribute="leadingMargin" constant="8" id="EpU-kq-cB2"/>
+                                                <constraint firstItem="wQC-ba-uQb" firstAttribute="top" secondItem="VRw-cN-p8c" secondAttribute="topMargin" constant="8" id="hWU-pv-wgb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wQC-ba-uQb" secondAttribute="trailing" constant="8" id="hy5-lF-BZ1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateLiftHistory" destination="uXe-zW-yfX" id="FBf-VU-ECv"/>
+                                            <outlet property="dateLiftHistory" destination="uXe-zW-yfX" id="ire-CS-p9X"/>
                                             <outlet property="lbsHistoryLabel" destination="g3p-Gm-xyU" id="I7h-TA-dr9"/>
                                             <outlet property="repsHistoryLabel" destination="bCW-Z2-2LS" id="Mg8-Jd-AGZ"/>
                                         </connections>
@@ -557,21 +555,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="trailing" secondItem="iFy-Bf-pSW" secondAttribute="trailing" id="DKt-eL-feD"/>
-                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="trailing" secondItem="yJw-oM-Y3F" secondAttribute="trailing" id="EDj-dg-pMf"/>
-                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="top" secondItem="yJw-oM-Y3F" secondAttribute="top" id="Ju8-iF-xjl"/>
-                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="trailing" secondItem="yJw-oM-Y3F" secondAttribute="trailing" id="T00-4D-76P"/>
-                            <constraint firstAttribute="bottom" secondItem="QNu-Y5-sCc" secondAttribute="bottom" constant="547" id="d2k-WY-ynV"/>
-                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="bottom" secondItem="yJw-oM-Y3F" secondAttribute="bottom" id="ePA-5u-Nmr"/>
-                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="top" secondItem="QNu-Y5-sCc" secondAttribute="bottom" id="elm-i4-xpf"/>
-                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="leading" secondItem="yJw-oM-Y3F" secondAttribute="leading" id="ggR-VX-RjB"/>
-                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="leading" secondItem="iFy-Bf-pSW" secondAttribute="leading" id="hps-cB-mAL"/>
-                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="leading" secondItem="yJw-oM-Y3F" secondAttribute="leading" id="kf7-w2-SdW"/>
+                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="top" secondItem="yJw-oM-Y3F" secondAttribute="top" id="Kqo-8h-jWi"/>
+                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="bottom" secondItem="yJw-oM-Y3F" secondAttribute="bottom" id="OMt-Rl-ebu"/>
+                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="trailing" secondItem="yJw-oM-Y3F" secondAttribute="trailing" id="QIJ-8C-lZQ"/>
+                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="top" secondItem="QNu-Y5-sCc" secondAttribute="bottom" id="agx-CM-EI7"/>
+                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="trailing" secondItem="yJw-oM-Y3F" secondAttribute="trailing" id="do7-3Q-3VP"/>
+                            <constraint firstItem="QNu-Y5-sCc" firstAttribute="leading" secondItem="yJw-oM-Y3F" secondAttribute="leading" id="iAW-Bb-zzL"/>
+                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="top" secondItem="QNu-Y5-sCc" secondAttribute="bottom" id="k5d-Va-cwN"/>
+                            <constraint firstItem="iFy-Bf-pSW" firstAttribute="leading" secondItem="yJw-oM-Y3F" secondAttribute="leading" id="riN-rr-Xwo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yJw-oM-Y3F"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="ofJ-SG-hwK"/>
                     <connections>
+                        <outlet property="dateLabel" destination="h3L-EF-DUr" id="uhW-KR-jio"/>
+                        <outlet property="headerView" destination="QNu-Y5-sCc" id="vlT-rw-ihk"/>
+                        <outlet property="lbsLabel" destination="GMV-Sc-6d3" id="kzB-Ch-tT7"/>
+                        <outlet property="repsLabel" destination="AWN-IL-lGp" id="zmf-WP-gGk"/>
                         <outlet property="tableView" destination="iFy-Bf-pSW" id="w3w-yk-F4A"/>
                     </connections>
                 </viewController>
