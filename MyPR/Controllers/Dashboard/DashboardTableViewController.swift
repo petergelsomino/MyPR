@@ -143,5 +143,18 @@ class DashboardTableViewController: UITableViewController {
     @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
           tableView.reloadData()
     }
+    
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                present(vc, animated: true, completion: nil)
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
