@@ -17,7 +17,7 @@ class DashboardTableViewController: UITableViewController {
     var lifts = [Lift]()
     var liftTitle = ""
     var ref = Database.database().reference(withPath: "users")
-    var user: User!
+    var user: User?
     
     var liftObjects = LiftObjectsArray()
 
@@ -34,7 +34,6 @@ class DashboardTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(self.user.email)
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,10 +55,24 @@ class DashboardTableViewController: UITableViewController {
         print("inside cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
         let liftcell = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
-        let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
-
+       
+        // Get the cell to wrap
+        cell.liftLabel.contentMode = .scaleToFill
+        cell.liftLabel.numberOfLines = 0
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
+        cell.liftLabel.textColor = UIColor(hexString: "#F7C59F")
+        cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
+        
         cell.liftLabel.text = liftcell
-        getHighestliftValuePerCategory(emailString: emailString, liftName: cell.liftLabel.text!) { (maxLift) -> () in
+        
+        guard (self.user?.email) != nil else {
+            cell.maxLiftLabel.text = "--"
+            return cell
+        }
+        
+        let emailString = self.user?.email.replacingOccurrences(of: ".", with: "-")
+        
+        getHighestliftValuePerCategory(emailString: emailString!, liftName: cell.liftLabel.text!) { (maxLift) -> () in
             if maxLift ==  0 {
                 cell.maxLiftLabel.text = "--"
             }
@@ -68,12 +81,7 @@ class DashboardTableViewController: UITableViewController {
             }
         }
         
-        // Get the cell to wrap
-        cell.liftLabel.contentMode = .scaleToFill
-        cell.liftLabel.numberOfLines = 0
-        cell.backgroundColor = UIColor(hexString: "#2E4057")
-        cell.liftLabel.textColor = UIColor(hexString: "#F7C59F")
-        cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
+
         return cell
     }
     
