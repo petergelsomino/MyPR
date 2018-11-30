@@ -172,6 +172,10 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
+    }
+    
 //    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 //        if let headerView = view as? UITableViewHeaderFooterView {
 //            headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")

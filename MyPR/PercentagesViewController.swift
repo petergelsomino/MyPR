@@ -149,6 +149,7 @@ class PercentagesViewController: UIViewController {
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 1)
             
             self.getLiftHistory(emailString: adjusteduser, liftName: self.titleName)
+
         }
     }
 
