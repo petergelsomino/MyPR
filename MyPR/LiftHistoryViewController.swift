@@ -13,6 +13,12 @@ import FirebaseAuth
 class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIView!
+
+    @IBOutlet weak var lbsLabel: UILabel!
+    @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     var titleName: String?
     
     // MARK: Properties
@@ -20,12 +26,20 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     var ref = Database.database().reference(withPath: "users")
     var user: User!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("In History View Controller")
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
+        self.tableView.allowsSelection = false
+        self.headerView.backgroundColor = UIColor(hexString: "#2E4057")
         
+        self.lbsLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.repsLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.dateLabel.textColor = UIColor(hexString: "#F7C59F")
+
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
@@ -49,13 +63,20 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("In Lift History Table View cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "LiftHistoryCell", for: indexPath) as! LiftHistoryTableViewCell
-        let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
+//        let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
         
         let liftcell = lifts[indexPath.row]
         
         cell.lbsHistoryLabel.text = "\(liftcell.maxLift)"
         cell.dateLiftHistory.text = liftcell.liftDate
         cell.repsHistoryLabel.text = "\(liftcell.reps)"
+        
+        cell.lbsHistoryLabel.textColor = UIColor(hexString: "#F7C59F")
+        cell.dateLiftHistory.textColor = UIColor(hexString: "#F7C59F")
+        cell.repsHistoryLabel.textColor = UIColor(hexString: "#F7C59F")
+        
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
+        
         
         return cell
     }
