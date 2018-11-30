@@ -74,7 +74,11 @@
                                 </segue>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="7if-mp-Gkd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Yyh-H8-hII" kind="show" identifier="dashToPercentage" id="3Fy-ih-lb2"/>
@@ -579,10 +583,10 @@
             </objects>
             <point key="canvasLocation" x="1797.5999999999999" y="728.18590704647681"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="8CJ-CW-BU9">
             <objects>
-                <viewController id="fi3-EB-ub9" customClass="LoginViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="fi3-EB-ub9" customClass="LoginViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n0N-ZQ-Pbp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1178,6 +1182,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vHv-AI-DT9"/>
+        <segue reference="2fI-Rm-1V0"/>
     </inferredMetricsTieBreakers>
 </document>
