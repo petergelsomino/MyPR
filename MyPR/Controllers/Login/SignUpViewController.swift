@@ -64,6 +64,10 @@ class SignUpViewController: UIViewController {
         self.prSubTitleLabel2.textColor = UIColor(hexString: "F7C59F")
         self.registerButtonTextLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
         self.backToSignInButtonLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
+        
+        self.emailTextField.keyboardType = UIKeyboardType.emailAddress
+        self.passwordTextField.isSecureTextEntry = true
+        self.retypePasswordTextField.isSecureTextEntry = true
     
         self.view.backgroundColor = UIColor(hexString: "#2E4057")
         // Do any additional setup after loading the view.
