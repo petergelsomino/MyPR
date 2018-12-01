@@ -89,7 +89,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         let nav = self.navigationController
         nav?.navigationBar.barTintColor = UIColor(hexString: "#82D4BB")
         nav?.navigationBar.tintColor = UIColor.white
-        nav?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(hexString: "#2E4057"), NSAttributedStringKey.font: UIFont(name: "Copperplate-Bold", size: 40)!]
+        nav?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(hexString: "#2E4057"), NSAttributedStringKey.font: UIFont(name: "Copperplate-Bold", size: 32)!]
         
         self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
         
@@ -221,6 +221,10 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         } else {
             return "\(repsPickerData[row])"
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
     }
     
     func selectedDatePickerRow(indexPath: IndexPath) {
