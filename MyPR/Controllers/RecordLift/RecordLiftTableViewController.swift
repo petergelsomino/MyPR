@@ -285,7 +285,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     }
     
     func poundsPickerData() -> [String] {
-        let min = 0
+        let min = 5
         let max = 500
         let int = 5
         var weightStringArray: [String] = []
