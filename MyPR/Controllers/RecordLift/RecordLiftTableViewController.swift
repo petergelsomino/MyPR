@@ -171,16 +171,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
-    
-//    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        if let headerView = view as? UITableViewHeaderFooterView {
-//            headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")
-//            if let textlabel = headerView.textLabel {
-//                textlabel.font = UIFont(name: "Copperplate-Bold", size: 20)
-//            }
-//        }
-//    }
-    
+
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -207,19 +198,27 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         newLiftRef.setValue(lift?.toAnyObject())
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont (name: "Copperplate", size: 30)
+        label.textColor = UIColor(hexString: "#F7C59F")
+        
+        if (pickerView.tag == 1){
+            label.text =  "\(pickerData[row])"
+        } else {
+            label.text = "\(repsPickerData[row])"
+        }
+        
+        label.textAlignment = .center
+        return label
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView.tag == 1){
             return pickerData.count
         }else{
             return repsPickerData.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (pickerView.tag == 1){
-            return "\(pickerData[row])"
-        } else {
-            return "\(repsPickerData[row])"
         }
     }
     

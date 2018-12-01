@@ -13,10 +13,14 @@ class ChooseLiftTableViewController: UITableViewController {
     // MARK: Variables
     var liftName = ""
     var liftObjects = LiftObjectsArray()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.title = "Choose Lift"
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,11 +45,30 @@ class ChooseLiftTableViewController: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.backgroundColor = UIColor(hexString: "#2E4057")
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")
+            headerView.backgroundColor = UIColor(hexString: "#2E4057")
+            if let textlabel = headerView.textLabel {
+                textlabel.font = UIFont(name: "Copperplate-Bold", size: 25)
+            }
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath)
         
         cell.textLabel?.text = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        
+        cell.textLabel?.textColor = UIColor(hexString: "#F7C59F")
+        cell.backgroundColor = UIColor(hexString: "#2E4057")
+        cell.textLabel?.font = UIFont(name:"Copperplate", size: 20.0)
         
         return cell
     }
