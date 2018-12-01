@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
         else{
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
                 if error == nil {
-                    guard let user = user else { return }
+                    guard let _ = user else { return }
                     self.performSegue(withIdentifier: "signUpViaRegisterSegue", sender: self)
                 }
                 else{

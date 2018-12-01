@@ -100,7 +100,9 @@ class PercentagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         print("In Percentages View Controller")
         self.view.backgroundColor = UIColor(hexString: "#2E4057")
         self.maxLiftsUIView.backgroundColor = UIColor(hexString: "#2E4057")
@@ -134,7 +136,7 @@ class PercentagesViewController: UIViewController {
         self.nintyPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
         self.nintyFivePercentLabel.textColor = UIColor(hexString: "#F7C59F")
         self.oneHundredPercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
-         self.oneHundredFivePercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
+        self.oneHundredFivePercentTextLabel.textColor = UIColor(hexString: "#F7C59F")
         
         self.segmentedControlLabel.tintColor = UIColor(hexString: "#F7C59F")
         
@@ -142,13 +144,14 @@ class PercentagesViewController: UIViewController {
             guard let user = user else { return }
             self.user = User(authData: user)
             let adjusteduser = self.user.email.replacingOccurrences(of: ".", with: "-")
-
+            
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 2)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 3)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 5)
             self.getOneReplifts(emailString: adjusteduser, liftName: self.titleName, reps: 1)
             
             self.getLiftHistory(emailString: adjusteduser, liftName: self.titleName)
+            
         }
     }
 
@@ -202,8 +205,13 @@ class PercentagesViewController: UIViewController {
             }
             self.lifts = previousLifts
 
-            let liftHistoryVC = self.tabBarController?.viewControllers![1] as! LiftHistoryViewController
-            liftHistoryVC.lifts = previousLifts
+            if let liftHistoryVC = self.tabBarController?.viewControllers![1] {
+                let new = liftHistoryVC as! LiftHistoryViewController
+                new.lifts = previousLifts
+                new.emailString = emailString
+                new.liftName = liftName
+            }
+        
         })
     }
     
@@ -266,5 +274,5 @@ class PercentagesViewController: UIViewController {
         })
         
     }
-    
+
 }

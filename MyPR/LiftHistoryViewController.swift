@@ -25,7 +25,8 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     var lifts = [Lift]()
     var ref = Database.database().reference(withPath: "users")
     var user: User!
-    
+    var emailString: String?
+    var liftName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +48,23 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         }
         print("Lift History End of View Did Load")
         print("Lift Count = \(lifts.count)")
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let lift = lifts[indexPath.row]
+            lift.ref?.removeValue()
+            lifts.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.tableView.reloadData()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,5 +112,7 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             completion(allLifts)
         })
     }
+    
+    
     
 }

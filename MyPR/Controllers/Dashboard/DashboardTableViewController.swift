@@ -23,6 +23,7 @@ class DashboardTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
             
         print("inside view did load")
@@ -31,6 +32,9 @@ class DashboardTableViewController: UITableViewController {
             self.user = User(authData: user)
             print("Setting the user in View Did Load")
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadView), name: NSNotification.Name(rawValue: "load"), object: nil)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -163,6 +167,10 @@ class DashboardTableViewController: UITableViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func loadList(notification: NSNotification){
+        self.tableView.reloadData()
     }
 }
 
