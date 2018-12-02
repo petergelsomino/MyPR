@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.11.1):
+    - Fabric (~> 1.8.1)
+  - Fabric (1.8.2)
   - Firebase/Auth (5.8.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
@@ -69,6 +72,8 @@ PODS:
     - Realm (= 3.9.0)
 
 DEPENDENCIES:
+  - Crashlytics (~> 3.11.1)
+  - Fabric (~> 1.8.2)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -76,6 +81,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -92,6 +99,8 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
+  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
+  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
   FirebaseAnalytics: df15839e9c6ca6bd14d2e8ab6b0c672e6c49097e
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
@@ -107,6 +116,6 @@ SPEC CHECKSUMS:
   Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
   RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
 
-PODFILE CHECKSUM: 5dcf63c1f9924cc1455923f53d56ebc251e57faf
+PODFILE CHECKSUM: 7cc1ef27cf645a4ac2b5bb1d47850aa4082d76aa
 
 COCOAPODS: 1.5.3
