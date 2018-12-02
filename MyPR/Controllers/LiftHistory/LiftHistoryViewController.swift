@@ -84,23 +84,4 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
-    
-    func getLiftHistory(emailString: String, liftName: String, completion: @escaping ([Lift]) -> ()) {
-        
-        var liftString = liftName.replacingOccurrences(of: " ", with: "")
-        liftString = liftString.lowercased()
-        
-        var allLifts: [Lift] = []
-        
-        let liftRef = self.ref.child("/\(emailString)/allLifts/\(liftString)").queryOrdered(byChild: "liftDate")
-        liftRef.observe(.value, with: { snapshot in
-            for child in snapshot.children {
-                if let snapshot = child as? DataSnapshot,
-                    let lift = Lift(snapshot: snapshot) {
-                    allLifts.append(lift)
-                }
-            }
-            completion(allLifts)
-        })
-    }
 }
