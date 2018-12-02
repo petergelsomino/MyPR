@@ -37,6 +37,11 @@ class DashboardTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +69,7 @@ class DashboardTableViewController: UITableViewController {
         cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
         
         cell.liftLabel.text = liftcell
+        cell.selectionStyle = .none
         
         guard (self.user?.email) != nil else {
             cell.maxLiftLabel.text = "--"

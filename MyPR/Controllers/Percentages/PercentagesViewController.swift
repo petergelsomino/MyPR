@@ -191,7 +191,7 @@ class PercentagesViewController: UIViewController {
 
             var previousLifts: [Lift] = []
 
-            for child in snapshot.children {
+            for child in snapshot.children.reversed() {
                 if let snapshot = child as? DataSnapshot,
                     let lift = Lift(snapshot: snapshot) {
                     previousLifts.append(lift)

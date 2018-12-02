@@ -56,7 +56,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Text Labels Color
         self.dateOfLiftTextLabel.textColor = UIColor(hexString: "#F7C59F")
         self.chooseLiftTextLabel.textColor = UIColor(hexString: "#F7C59F")
@@ -115,6 +115,8 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         self.repsPicker.delegate = self
         self.repsPicker.dataSource = self
         self.repsPicker.tag = 2
+        
+        self.datePicker.maximumDate = Date()
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
