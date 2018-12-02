@@ -71,6 +71,8 @@ class SignUpViewController: UIViewController {
     
         self.view.backgroundColor = UIColor(hexString: "#2E4057")
         // Do any additional setup after loading the view.
+        
+        self.hideKeyboardWhenTappedAround() 
     }
 
     override func didReceiveMemoryWarning() {
