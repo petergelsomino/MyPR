@@ -27,7 +27,7 @@
 		AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */; };
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
 		AECE5E54215D784C00285155 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE5E53215D784C00285155 /* User.swift */; };
-		AEDEF856215582B200AA78B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */; };
+		AED3DC1A21B43FFA0007107F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */; };
 		AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF85721558A3000AA78B7 /* LoginViewController.swift */; };
 		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,7 @@
 		AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
 		AECE5E53215D784C00285155 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEDEF85721558A3000AA78B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
 				AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */,
-				AEDEF855215582B200AA78B7 /* GoogleService-Info.plist */,
+				AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */,
 				AEB74362212F56EB007A3425 /* Info.plist */,
 			);
 			path = MyPR;
@@ -350,7 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB74361212F56EB007A3425 /* LaunchScreen.storyboard in Resources */,
-				AEDEF856215582B200AA78B7 /* GoogleService-Info.plist in Resources */,
+				AED3DC1A21B43FFA0007107F /* GoogleService-Info.plist in Resources */,
 				AEB7435E212F56EB007A3425 /* Assets.xcassets in Resources */,
 				AEB7435C212F56EA007A3425 /* Main.storyboard in Resources */,
 			);
@@ -634,14 +634,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SGVJZ7G6WW;
+				DEVELOPMENT_TEAM = H56GSBWVE6;
 				INFOPLIST_FILE = MyPR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.petegels.MyPR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petegels.MyPRs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,14 +654,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SGVJZ7G6WW;
+				DEVELOPMENT_TEAM = H56GSBWVE6;
 				INFOPLIST_FILE = MyPR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.petegels.MyPR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petegels.MyPRs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

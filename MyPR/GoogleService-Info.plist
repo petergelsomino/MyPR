@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1079097745460-dfldiahmghurlehg19lsjllnrlip3o20.apps.googleusercontent.com</string>
+	<string>183579199507-bl1rlnflfe80vdovfl0i064gl2r0gbst.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1079097745460-dfldiahmghurlehg19lsjllnrlip3o20</string>
+	<string>com.googleusercontent.apps.183579199507-bl1rlnflfe80vdovfl0i064gl2r0gbst</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAad7rHI-B7XPeALj--7MSQffnegVnl-w0</string>
+	<string>AIzaSyCZtHved0wxZWtArwKX4pFWtIXyixMZB-U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1079097745460</string>
+	<string>183579199507</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.petegels.MyPR</string>
+	<string>com.petegels.MyPRs</string>
 	<key>PROJECT_ID</key>
-	<string>mypr-pg</string>
+	<string>myprs-2fc25</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mypr-pg.appspot.com</string>
+	<string>myprs-2fc25.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1079097745460:ios:52a2484db4c4ee61</string>
+	<string>1:183579199507:ios:17d630cbc5175f20</string>
 	<key>DATABASE_URL</key>
-	<string>https://mypr-pg.firebaseio.com</string>
+	<string>https://myprs-2fc25.firebaseio.com</string>
 </dict>
 </plist>
