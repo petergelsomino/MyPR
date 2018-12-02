@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Crashlytics
 
 class LoginViewController: UIViewController {
     

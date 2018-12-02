@@ -6,4 +6,6 @@ platform :ios, '10.3'
   pod 'Firebase/Core'
   pod ‘Firebase/Auth’
   pod 'Firebase/Database'
+  pod 'Fabric', '~> 1.8.2'
+  pod 'Crashlytics', '~> 3.11.1'
  end
