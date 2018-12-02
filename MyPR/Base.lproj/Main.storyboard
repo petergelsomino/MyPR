@@ -614,7 +614,7 @@
                                     <segue destination="588-RX-oBY" kind="showDetail" id="sTE-l9-dpl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6E-lQ-Bmk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyPRs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6E-lQ-Bmk">
                                 <rect key="frame" x="16" y="120" width="343" height="86"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="85"/>
                                 <nil key="textColor"/>
@@ -1241,6 +1241,6 @@
         <image name="tab-bar-percentage-small" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vHv-AI-DT9"/>
+        <segue reference="QcE-00-0CT"/>
     </inferredMetricsTieBreakers>
 </document>

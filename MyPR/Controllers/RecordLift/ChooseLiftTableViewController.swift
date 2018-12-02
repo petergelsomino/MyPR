@@ -14,13 +14,10 @@ class ChooseLiftTableViewController: UITableViewController {
     var liftName = ""
     var liftObjects = LiftObjectsArray()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose Lift"
         self.tableView.backgroundColor = UIColor(hexString: "#2E4057")
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +26,6 @@ class ChooseLiftTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return liftObjects.liftObjectsArray.count
-
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -65,7 +61,6 @@ class ChooseLiftTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath)
         
         cell.textLabel?.text = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
-        
         cell.textLabel?.textColor = UIColor(hexString: "#F7C59F")
         cell.backgroundColor = UIColor(hexString: "#2E4057")
         cell.textLabel?.font = UIFont(name:"Copperplate", size: 20.0)
@@ -85,5 +80,4 @@ class ChooseLiftTableViewController: UITableViewController {
             vc.chosenLift.text = liftName
         }
     }
-    
 }

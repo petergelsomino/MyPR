@@ -44,11 +44,7 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
-            print("End of Auth")
         }
-        print("Lift History End of View Did Load")
-        print("Lift Count = \(lifts.count)")
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,15 +64,11 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("In Lift History Table View numberOfRowsInSection")
-        print(lifts.count)
         return lifts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("In Lift History Table View cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "LiftHistoryCell", for: indexPath) as! LiftHistoryTableViewCell
-//        let emailString = self.user.email.replacingOccurrences(of: ".", with: "-")
         
         let liftcell = lifts[indexPath.row]
         
@@ -89,7 +81,6 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         cell.repsHistoryLabel.textColor = UIColor(hexString: "#F7C59F")
         
         cell.backgroundColor = UIColor(hexString: "#2E4057")
-        
         
         return cell
     }
@@ -112,7 +103,4 @@ class LiftHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             completion(allLifts)
         })
     }
-    
-    
-    
 }

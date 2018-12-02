@@ -139,6 +139,8 @@
 		AEA5B5D32159A63B002B9070 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AED3DC1C21B443DA0007107F /* LiftHistory */,
+				AED3DC1B21B443A10007107F /* Percentages */,
 				AEA5B5D62159A6C5002B9070 /* Login */,
 				AEA5B5D42159A64C002B9070 /* Dashboard */,
 				AEA5B5D52159A69E002B9070 /* RecordLift */,
@@ -159,8 +161,8 @@
 		AEA5B5D52159A69E002B9070 /* RecordLift */ = {
 			isa = PBXGroup;
 			children = (
-				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
 				AEB115F421372C5400F49EAE /* ChooseLiftTableViewController.swift */,
+				AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */,
 			);
 			path = RecordLift;
 			sourceTree = "<group>";
@@ -202,12 +204,8 @@
 				AE2FA9292143F9DF00622DCD /* Utils */,
 				AEA5B5D22159A60D002B9070 /* Models */,
 				AEA5B5D32159A63B002B9070 /* Controllers */,
-				AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */,
 				AEB7435A212F56EA007A3425 /* Main.storyboard */,
 				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
-				AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */,
-				AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */,
-				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
 				AEB7435F212F56EB007A3425 /* LaunchScreen.storyboard */,
 				AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */,
@@ -232,6 +230,24 @@
 				AEB74378212F56EB007A3425 /* Info.plist */,
 			);
 			path = MyPRUITests;
+			sourceTree = "<group>";
+		};
+		AED3DC1B21B443A10007107F /* Percentages */ = {
+			isa = PBXGroup;
+			children = (
+				AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */,
+				AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */,
+			);
+			path = Percentages;
+			sourceTree = "<group>";
+		};
+		AED3DC1C21B443DA0007107F /* LiftHistory */ = {
+			isa = PBXGroup;
+			children = (
+				AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */,
+				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
+			);
+			path = LiftHistory;
 			sourceTree = "<group>";
 		};
 		B668E42B1F9F84626C012652 /* Frameworks */ = {

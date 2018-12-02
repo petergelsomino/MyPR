@@ -30,7 +30,6 @@ class DashboardTableViewController: UITableViewController {
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = User(authData: user)
-            print("Setting the user in View Did Load")
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadView), name: NSNotification.Name(rawValue: "load"), object: nil)
@@ -45,8 +44,6 @@ class DashboardTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return liftObjects.liftObjectsArray.count
     }
@@ -60,7 +57,6 @@ class DashboardTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell
         let liftcell = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
        
-        // Get the cell to wrap
         cell.liftLabel.contentMode = .scaleToFill
         cell.liftLabel.numberOfLines = 0
         cell.backgroundColor = UIColor(hexString: "#2E4057")
@@ -84,8 +80,6 @@ class DashboardTableViewController: UITableViewController {
                 cell.maxLiftLabel.text = String(maxLift)
             }
         }
-        
-
         return cell
     }
     

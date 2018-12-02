@@ -34,7 +34,6 @@ class PercentagesViewController: UIViewController {
     @IBOutlet weak var oneHundredFivePercentageLabel: UILabel!
     
     @IBOutlet weak var segmentedControlLabel: UISegmentedControl!
-    @IBOutlet weak var navigationTitle: UINavigationItem!
     
     @IBOutlet weak var maxLiftsUIView: UIView!
     @IBOutlet weak var percentagesUIView: UIView!
@@ -62,7 +61,6 @@ class PercentagesViewController: UIViewController {
         switch segmentedControlLabel.selectedSegmentIndex
         {
         case 0:
-            print("First Segment Selected")
             if oneRepMax.text == "--" {
                 calculatePercentagesBasedOnReps(repMax: 0)
             } else {
@@ -70,7 +68,6 @@ class PercentagesViewController: UIViewController {
                 calculatePercentagesBasedOnReps(repMax: repMaxFloat)
             }
         case 1:
-            print("second Segment Selected")
             if twoRepMax.text == "--" {
                 calculatePercentagesBasedOnReps(repMax: 0)
             } else {
@@ -78,7 +75,6 @@ class PercentagesViewController: UIViewController {
                 calculatePercentagesBasedOnReps(repMax: repMaxFloat)
             }
         case 2:
-            print("third Segment Selected")
             if threeRepMax.text == "--" {
                 calculatePercentagesBasedOnReps(repMax: 0)
             } else {
@@ -86,7 +82,6 @@ class PercentagesViewController: UIViewController {
                 calculatePercentagesBasedOnReps(repMax: repMaxFloat)
             }
         case 3:
-            print("forth Segment Selected")
             if fiveRepMax.text == "--" {
                 calculatePercentagesBasedOnReps(repMax: 0)
             } else {
@@ -103,7 +98,6 @@ class PercentagesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("In Percentages View Controller")
         self.view.backgroundColor = UIColor(hexString: "#2E4057")
         self.maxLiftsUIView.backgroundColor = UIColor(hexString: "#2E4057")
         self.percentagesUIView.backgroundColor = UIColor(hexString: "#2E4057")
@@ -225,7 +219,6 @@ class PercentagesViewController: UIViewController {
         
         liftRef.observe(.value, with: { snapshot in
             for child in snapshot.children.reversed() {
-                print("onerepmaxforloop")
                 if let snapshot = child as? DataSnapshot,
                     let lift = Lift(snapshot: snapshot) {
                     if lift.reps == reps {

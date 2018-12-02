@@ -66,8 +66,6 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
             }
         }
-        // Do any additional setup after loading the view.
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +76,6 @@ class LoginViewController: UIViewController {
 
    //  MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("In prepare segue Login to Dashboard")
         if segue.identifier == "alreadyLoggedIn" || segue.identifier == "loginToHome" {
             let nav = segue.destination as! UINavigationController
             let svc = nav.topViewController as! DashboardTableViewController
