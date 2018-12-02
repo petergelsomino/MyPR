@@ -267,7 +267,6 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
             self.tableView.beginUpdates()
             self.tableView.deselectRow(at: indexPath, animated: true)
             self.tableView.endUpdates()
-            print("inside animation")
         })
     }
     
@@ -278,7 +277,6 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
             repsSelected.text = repsPickerData[row]
         }
     }
-
     
     func convertStringToInt(string: String) -> Int {
         return Int(string)!

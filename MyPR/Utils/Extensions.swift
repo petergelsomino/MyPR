@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-extension Date
-{
+extension Date {
     init(dateString:String) {
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd"
@@ -39,7 +38,3 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
-
-//class Colors {
-////    let backgroundColor = UIColor(hexString: "#757575")
-//}
