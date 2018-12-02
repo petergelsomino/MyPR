@@ -66,6 +66,8 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
             }
         }
+        
+        self.hideKeyboardWhenTappedAround() 
     }
 
     override func didReceiveMemoryWarning() {
