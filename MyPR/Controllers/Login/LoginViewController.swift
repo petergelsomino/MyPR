@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Crashlytics
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var currentUser: User?
     
@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.titleLabel.textColor = UIColor(hexString: "82D4BB")
         self.loginButtonLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
         self.signUpButtonLabel.setTitleColor(UIColor(hexString: "F7C59F"), for: .normal)
@@ -57,7 +58,9 @@ class LoginViewController: UIViewController {
         
         self.emailTextField.keyboardType = UIKeyboardType.emailAddress
         self.passwordTextField.isSecureTextEntry = true
-        
+        self.emailTextField.tag = 0
+        self.passwordTextField.tag = 1
+       
         if Auth.auth().currentUser != nil {
             self.currentUser = User(authData: Auth.auth().currentUser!)
             print("PETE: were already signed in")
@@ -66,8 +69,39 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
             }
         }
+        self.hideKeyboardWhenTappedAround()
         
-        self.hideKeyboardWhenTappedAround() 
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    //MARK: - Controlling the Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +118,5 @@ class LoginViewController: UIViewController {
             svc.user = self.currentUser
         }
     }
- 
 
 }
