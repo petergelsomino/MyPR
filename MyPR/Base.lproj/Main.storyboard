@@ -65,16 +65,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My PRs" id="0ef-uP-VEy">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
                             <connections>
                                 <segue destination="HRa-mX-8DZ" kind="popoverPresentation" identifier="" popoverAnchorBarButtonItem="5Se-nd-58w" id="FFc-Dh-UdW">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
-                            <connections>
-                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -27,14 +27,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButton(_ sender: Any) {
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if error == nil{
+            if error == nil {
                 Auth.auth().addStateDidChangeListener { auth, user in
                     guard let user = user else { return }
                     self.currentUser = User(authData: user)
                     self.performSegue(withIdentifier: "loginToHome", sender: self)
                 }
-            }
-            else{
+            } else {
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
@@ -61,6 +60,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.tag = 0
         self.passwordTextField.tag = 1
        
+        self.hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         if Auth.auth().currentUser != nil {
             self.currentUser = User(authData: Auth.auth().currentUser!)
             print("PETE: were already signed in")
@@ -69,10 +73,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegue(withIdentifier: "alreadyLoggedIn", sender: self)
             }
         }
-        self.hideKeyboardWhenTappedAround()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -157,16 +157,24 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-                present(vc, animated: true, completion: nil)
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }
+
+            let alert = UIAlertController(title: "Are you sure you want to logout?", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                if Auth.auth().currentUser != nil {
+                    do {
+                        try Auth.auth().signOut()
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                        self.present(vc, animated: true, completion: nil)
+                        
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
     }
     
     func loadList(notification: NSNotification){
