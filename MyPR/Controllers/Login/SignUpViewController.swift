@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -59,6 +59,11 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailTextField.tag = 0
+        self.passwordTextField.tag = 1
+        self.retypePasswordTextField.tag = 2
+        
         self.welcomeButtonTextLabel.textColor = UIColor(hexString: "82D4BB")
         self.prSubTitleLabel.textColor = UIColor(hexString: "F7C59F")
         self.prSubTitleLabel2.textColor = UIColor(hexString: "F7C59F")
@@ -73,6 +78,19 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.hideKeyboardWhenTappedAround() 
+    }
+    
+    //MARK: - Controlling the Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
 
     override func didReceiveMemoryWarning() {

@@ -65,16 +65,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My PRs" id="0ef-uP-VEy">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
                             <connections>
                                 <segue destination="HRa-mX-8DZ" kind="popoverPresentation" identifier="" popoverAnchorBarButtonItem="5Se-nd-58w" id="FFc-Dh-UdW">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
-                            <connections>
-                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,7 +109,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGx-dJ-uuq">
                                                             <rect key="frame" x="0.0" y="0.0" width="163.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -172,7 +172,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzU-Gp-Dox">
                                                     <rect key="frame" x="24" y="19" width="119" height="22"/>
-                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -206,7 +206,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="220" id="6t3-Ft-ujc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -274,13 +274,13 @@
                                                     <rect key="frame" x="24" y="11" width="327" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1O-Zl-1qE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="38"/>
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="122" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrB-Hl-hmO">
-                                                            <rect key="frame" x="143.5" y="0.0" width="114" height="38"/>
+                                                            <rect key="frame" x="137" y="0.0" width="120.5" height="38"/>
                                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -617,13 +617,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="259" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fi3-EB-ub9" id="naA-lY-hwc"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbu-Yp-fxk">
                                         <rect key="frame" x="0.0" y="70" width="259" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="loginButton:" destination="fi3-EB-ub9" eventType="editingDidEndOnExit" id="Wd6-Yn-cum"/>
+                                            <outlet property="delegate" destination="fi3-EB-ub9" id="2A8-nh-WwE"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -707,19 +714,29 @@
                                         <rect key="frame" x="0.0" y="0.0" width="247" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="588-RX-oBY" id="sPH-6s-4Ad"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-3d-BlF">
                                         <rect key="frame" x="0.0" y="60" width="247" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="588-RX-oBY" id="fb0-j6-WWc"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KeT-I1-UMV">
                                         <rect key="frame" x="0.0" y="120" width="247" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="registerButton:" destination="588-RX-oBY" eventType="editingDidEndOnExit" id="aIv-Ka-LfZ"/>
+                                            <outlet property="delegate" destination="588-RX-oBY" id="TMx-KZ-Zgz"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -1239,6 +1256,6 @@
         <image name="tab-bar-percentage-small" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vHv-AI-DT9"/>
+        <segue reference="2fI-Rm-1V0"/>
     </inferredMetricsTieBreakers>
 </document>
