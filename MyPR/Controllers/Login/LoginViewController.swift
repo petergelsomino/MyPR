@@ -62,9 +62,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
        
         self.hideKeyboardWhenTappedAround()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         if Auth.auth().currentUser != nil {
             self.currentUser = User(authData: Auth.auth().currentUser!)
             print("PETE: were already signed in")
@@ -74,22 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
+
     
     //MARK: - Controlling the Keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
