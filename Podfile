@@ -8,4 +8,10 @@ platform :ios, '10.3'
   pod 'Firebase/Database'
   pod 'Fabric', '~> 1.8.2'
   pod 'Crashlytics', '~> 3.11.1'
+
+  target 'MyPRTests' do
+	inherit! :complete
+        pod 'Firebase'
+  end
+
  end
