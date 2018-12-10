@@ -59,6 +59,7 @@
 		AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCategories.swift; sourceTree = "<group>"; };
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPR.entitlements; sourceTree = "<group>"; };
 		AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftTabBarViewController.swift; sourceTree = "<group>"; };
 		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
 		AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		AEB74355212F56E9007A3425 /* MyPR */ = {
 			isa = PBXGroup;
 			children = (
+				AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */,
 				AE2FA9292143F9DF00622DCD /* Utils */,
 				AEA5B5D22159A60D002B9070 /* Models */,
 				AEA5B5D32159A63B002B9070 /* Controllers */,
@@ -342,6 +344,11 @@
 				TargetAttributes = {
 					AEB74352212F56E9007A3425 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					AEB74366212F56EB007A3425 = {
 						CreatedOnToolsVersion = 9.4;
@@ -717,6 +724,7 @@
 			baseConfigurationReference = BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyPR/MyPR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H56GSBWVE6;
 				INFOPLIST_FILE = MyPR/Info.plist;
@@ -737,6 +745,7 @@
 			baseConfigurationReference = 8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyPR/MyPR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H56GSBWVE6;
 				INFOPLIST_FILE = MyPR/Info.plist;
