@@ -105,7 +105,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
         poundsPicker.isHidden = true
         repsPicker.isHidden = true
         pickerData = poundsPickerData()
-        repsPickerData = ["1", "2", "3", "5"]
+        repsPickerData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
         
         // Connect data:
         self.poundsPicker.delegate = self
@@ -286,7 +286,7 @@ class RecordLiftTableViewController: UITableViewController, UIPickerViewDelegate
     
     func poundsPickerData() -> [String] {
         let min = 5
-        let max = 500
+        let max = 1005
         let int = 5
         var weightStringArray: [String] = []
         
