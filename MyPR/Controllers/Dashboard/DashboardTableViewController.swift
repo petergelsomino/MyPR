@@ -143,7 +143,7 @@ class DashboardTableViewController: UITableViewController {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textColor = UIColor(hexString: "#F7C59F")
             if let textlabel = headerView.textLabel {
-                textlabel.font = UIFont(name: "Copperplate-Bold", size: 20)
+                textlabel.font = UIFont(name: "Copperplate-Bold", size: 18)
             }
         }
     }
