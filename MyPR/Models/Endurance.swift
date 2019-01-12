@@ -15,19 +15,17 @@ struct Endurance {
     let key: String
     let enduranceType: EnduranceType
     let name: String
-    let description: String
     let time: String
-    let units: String
+    let enduranceMetric: EnduranceMetric
     let recordedByUser: String
     
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String: AnyObject],
             let enduranceType = value["enduranceType"] as? EnduranceType,
+            let enduranceMetric = value["enduranceMetric"] as? EnduranceMetric,
             let name = value["name"] as? String,
-            let description = value["description"] as? String,
             let time = value["time"] as? String,
-            let units = value["units"] as? String,
             let recordedByUser = value["recordedByUser"] as? String else {
                 return nil
         }
@@ -35,32 +33,23 @@ struct Endurance {
         self.ref = snapshot.ref
         self.key = snapshot.key
         self.enduranceType = enduranceType
+        self.enduranceMetric = enduranceMetric
         self.name = name
-        self.description = description
         self.time = time
-        self.units = units
         self.recordedByUser = recordedByUser
     }
     
     func toAnyObject() -> Any {
         return [
             "enduranceType": enduranceType,
+            "enduranceMetric": enduranceMetric,
             "name": name,
-            "description": description,
             "time": time,
-            "units": units,
             "recordedByUser": recordedByUser
         ]
     }
     
 }
-
-enum EnduranceMetric {
-    case imperial
-    case metric
-    case calories
-}
-
 
 enum EnduranceType {
     case row
@@ -93,7 +82,13 @@ enum EnduranceType {
     }
 }
 
-enum CalorieDistance {
+enum EnduranceMetric {
+    case imperial(ImperialDistance)
+    case metric(MetricDistance)
+    case calories(CalorieDistance)
+}
+
+enum CalorieDistance: CaseIterable {
     case eight
     case ten
     case fifteen
@@ -121,7 +116,7 @@ enum CalorieDistance {
     }
 }
 
-enum ImperialDistance: String {
+enum ImperialDistance: CaseIterable {
     case oneMile
     case threeMiles
     case fiveMiles
@@ -162,7 +157,7 @@ enum ImperialDistance: String {
 }
 
 
-enum MetricValues: String {
+enum MetricDistance: CaseIterable {
     case fifty
     case oneHundred
     case fourHundred
