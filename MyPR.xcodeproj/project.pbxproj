@@ -31,6 +31,8 @@
 		AED3DC1A21B43FFA0007107F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */; };
 		AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF85721558A3000AA78B7 /* LoginViewController.swift */; };
 		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
+		AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964121E7BC7B0013829B /* Endurance.swift */; };
+		AEEE964421E7C7B20013829B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964321E7C7B20013829B /* Strings.swift */; };
 		CD0BAFEA8630526B223B0C3F /* Pods_MyPR_MyPRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC196CB4AAEFBF9F496811 /* Pods_MyPR_MyPRTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEDEF85721558A3000AA78B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AEEE964121E7BC7B0013829B /* Endurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endurance.swift; sourceTree = "<group>"; };
+		AEEE964321E7C7B20013829B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
 		D2AD9BC168764F36A3531476 /* Pods-MyPR-MyPRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR-MyPRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR-MyPRTests/Pods-MyPR-MyPRTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				AE2FA92A2143F9F600622DCD /* Extensions.swift */,
+				AEEE964321E7C7B20013829B /* Strings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				AEB74384212F571B007A3425 /* Lift.swift */,
 				AECE5E53215D784C00285155 /* User.swift */,
 				AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */,
+				AEEE964121E7BC7B0013829B /* Endurance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
 				AECE5E54215D784C00285155 /* User.swift in Sources */,
 				AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */,
+				AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */,
 				AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */,
 				AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */,
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
@@ -549,6 +556,7 @@
 				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
 				AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */,
 				AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */,
+				AEEE964421E7C7B20013829B /* Strings.swift in Sources */,
 				AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
