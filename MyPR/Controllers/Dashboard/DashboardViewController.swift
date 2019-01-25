@@ -37,6 +37,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             self.user = User(authData: user)
         }
         
+        dashboardTableView.dataSource = self
+        dashboardTableView.delegate = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadView), name: NSNotification.Name(rawValue: "load"), object: nil)
         // Do any additional setup after loading the view.
     }
@@ -77,9 +80,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("inside cellForRowAt")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableCell", for: indexPath) as! DashboardTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardCell", for: indexPath) as! DashTableViewCell
         let liftcell = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
-
+        
         cell.liftLabel.contentMode = .scaleToFill
         cell.liftLabel.numberOfLines = 0
         cell.backgroundColor = UIColor(hexString: "#2E4057")

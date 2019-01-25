@@ -1,5 +1,5 @@
 //
-//  DashboardTableCell.swift
+//  DashTableViewCell.swift
 //  MyPR
 //
 //  Created by Peter Gelsomino on 1/25/19.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class DashboardTableCell: UITableViewCell {
+class DashTableViewCell: UITableViewCell {
 
     @IBOutlet weak var liftLabel: UILabel!
     @IBOutlet weak var maxLiftLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
