@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D74542A21389669E45BAB99 /* Pods_MyPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */; };
 		AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */; };
+		AE1C3DBA21FB5E9900F1D423 /* DashboardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C3DB921FB5E9900F1D423 /* DashboardTableCell.swift */; };
 		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
 		AE6CB67521BDE9B200D4BAD9 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */; };
 		AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */; };
@@ -33,6 +34,7 @@
 		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
 		AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964121E7BC7B0013829B /* Endurance.swift */; };
 		AEEE964421E7C7B20013829B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964321E7C7B20013829B /* Strings.swift */; };
+		AEFE283121F7C5B200ADFF5B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */; };
 		CD0BAFEA8630526B223B0C3F /* Pods_MyPR_MyPRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC196CB4AAEFBF9F496811 /* Pods_MyPR_MyPRTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,7 @@
 		8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.release.xcconfig"; sourceTree = "<group>"; };
 		93AC196CB4AAEFBF9F496811 /* Pods_MyPR_MyPRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPR_MyPRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCategories.swift; sourceTree = "<group>"; };
+		AE1C3DB921FB5E9900F1D423 /* DashboardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableCell.swift; sourceTree = "<group>"; };
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPR.entitlements; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AEEE964121E7BC7B0013829B /* Endurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endurance.swift; sourceTree = "<group>"; };
 		AEEE964321E7C7B20013829B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
 		D2AD9BC168764F36A3531476 /* Pods-MyPR-MyPRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR-MyPRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR-MyPRTests/Pods-MyPR-MyPRTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,8 @@
 				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
 				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
 				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
+				AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */,
+				AE1C3DB921FB5E9900F1D423 /* DashboardTableCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFE283121F7C5B200ADFF5B /* DashboardViewController.swift in Sources */,
 				AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */,
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */,
 				AEEE964421E7C7B20013829B /* Strings.swift in Sources */,
 				AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */,
+				AE1C3DBA21FB5E9900F1D423 /* DashboardTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,7 +96,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "alreadyLoggedIn" || segue.identifier == "loginToHome" {
             let nav = segue.destination as! UINavigationController
-            let svc = nav.topViewController as! DashboardTableViewController
+            let svc = nav.topViewController as! DashboardViewController
             svc.user = self.currentUser
         }
     }
