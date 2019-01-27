@@ -167,6 +167,7 @@
 		AEA5B5D42159A64C002B9070 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				AED488F921FB9ED80066F658 /* Endurance */,
 				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
 				AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */,
 				AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */,
@@ -266,6 +267,13 @@
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 			);
 			path = LiftHistory;
+			sourceTree = "<group>";
+		};
+		AED488F921FB9ED80066F658 /* Endurance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endurance;
 			sourceTree = "<group>";
 		};
 		B668E42B1F9F84626C012652 /* Frameworks */ = {

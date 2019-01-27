@@ -51,7 +51,9 @@ struct Endurance {
     
 }
 
-enum EnduranceType {
+enum EnduranceType: CaseIterable {
+    
+    case run
     case row
     case ski
     case assaultBike
@@ -61,10 +63,11 @@ enum EnduranceType {
 
     var displayText: String {
         switch self {
+        case .run: return .run
         case .row: return .row
         case .ski: return .ski
         case .assaultBike: return .assaultBike
-        case .echoBike: return .assaultBike
+        case .echoBike: return .echoBike
         case .bike: return .bike
         case .swim: return .swim
         }
@@ -72,12 +75,13 @@ enum EnduranceType {
     
     var databaseKey: String {
         switch self {
-        case .row: return .row
-        case .ski: return .ski
-        case .assaultBike: return .assaultBike
-        case .echoBike: return .assaultBike
-        case .bike: return .bike
-        case .swim: return .swim
+        case .row: return "Row"
+        case .ski: return "Ski"
+        case .assaultBike: return "Assult Bike"
+        case .echoBike: return "Echo Bike"
+        case .bike: return "Bike"
+        case .swim: return "Swim"
+        case .run: return "Run"
         }
     }
 }
@@ -199,4 +203,6 @@ enum MetricDistance: CaseIterable {
         }
     }
 }
+
+
 

@@ -25,7 +25,19 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var dashboardSegmentedControl: UISegmentedControl!
     @IBOutlet weak var dashboardTableView: UITableView!
     
-
+    @IBAction func segmentedControlChanged(_ sender: Any) {
+        switch dashboardSegmentedControl.selectedSegmentIndex {
+        case 0:
+            print("lifts")
+            break
+        case 1:
+            print("endurance")
+            break
+        default:
+            break
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +54,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadView), name: NSNotification.Name(rawValue: "load"), object: nil)
         // Do any additional setup after loading the view.
+        
+        print(returnEnduranceTypesForSections())
+        print(returnSectionEndurances(enduranceType: "Run"))
+       print(returnSectionEndurances(enduranceType: "Row"))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -186,18 +202,50 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func loadList(notification: NSNotification){
         self.dashboardTableView.reloadData()
     }
-}
-
-
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // PUTTING ENDURANCE STUFF HERE CAUSE IDK WHERE IT WILL GO NOW
+    func returnEnduranceTypesForSections() -> [String] {
+        var array:[String] = []
+        for type in EnduranceType.allCases {
+            print(type.displayText)
+            array.append(type.displayText)
+        }
+        return array
     }
-    */
-
+    
+    func returnSectionEndurances(enduranceType: String) -> [String] {
+        switch enduranceType {
+        case "Run":
+            return returnRunningDistances()
+        case "Row":
+            return returnRowingDistances()
+        default:
+            return []
+        }
+    }
+    
+    func returnRunningDistances() -> [String] {
+        var array:[String] = []
+        for distance in ImperialDistance.allCases {
+            print(distance.displayText)
+            array.append(distance.displayText)
+        }
+        return array
+    }
+    
+    func returnRowingDistances() -> [String] {
+        var array:[String] = []
+        for calories in CalorieDistance.allCases {
+            print(calories.displayText)
+            array.append(calories.displayText)
+        }
+        
+        for meters in MetricDistance.allCases {
+            print(meters.displayText)
+            array.append(meters.displayText)
+        }
+        
+        return array
+    }
+}
