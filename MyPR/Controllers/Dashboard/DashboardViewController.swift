@@ -19,7 +19,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     var liftTitle = ""
     var ref = Database.database().reference(withPath: "users")
     var user: User?
-    var liftObjects = LiftObjectsArray()
+    var liftObjects = LiftObjectsArray().getliftsObjectsArray()
+    var enduranceObjects = LiftObjectsArray().getEnduranceObjectsArray()
     
     // MARK: Outlets
     @IBOutlet weak var dashboardSegmentedControl: UISegmentedControl!
@@ -29,9 +30,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         switch dashboardSegmentedControl.selectedSegmentIndex {
         case 0:
             print("lifts")
+            dashboardTableView.reloadData()
             break
         case 1:
             print("endurance")
+            dashboardTableView.reloadData()
             break
         default:
             break
@@ -54,10 +57,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadView), name: NSNotification.Name(rawValue: "load"), object: nil)
         // Do any additional setup after loading the view.
-        
-        print(returnEnduranceTypesForSections())
-        print(returnSectionEndurances(enduranceType: "Run"))
-       print(returnSectionEndurances(enduranceType: "Row"))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,11 +73,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return liftObjects.liftObjectsArray.count
+        print("PETE Endurance Objects: \(enduranceObjects.count)")
+        return liftObjects.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return liftObjects.liftObjectsArray[section].liftSectionName
+        if dashboardSegmentedControl.selectedSegmentIndex == 0 {
+            return liftObjects[section].liftSectionName
+        }
+            return enduranceObjects[section].liftSectionName
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,18 +89,18 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        liftTitle = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        liftTitle = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
         performSegue(withIdentifier: "dashToPercentage", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return liftObjects.liftObjectsArray[section].liftSectionObjects.count
+        return liftObjects[section].liftSectionObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("inside cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardCell", for: indexPath) as! DashTableViewCell
-        let liftcell = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        let liftcell = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
         
         cell.liftLabel.contentMode = .scaleToFill
         cell.liftLabel.numberOfLines = 0
@@ -205,47 +208,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     // PUTTING ENDURANCE STUFF HERE CAUSE IDK WHERE IT WILL GO NOW
-    func returnEnduranceTypesForSections() -> [String] {
-        var array:[String] = []
-        for type in EnduranceType.allCases {
-            print(type.displayText)
-            array.append(type.displayText)
-        }
-        return array
-    }
     
-    func returnSectionEndurances(enduranceType: String) -> [String] {
-        switch enduranceType {
-        case "Run":
-            return returnRunningDistances()
-        case "Row":
-            return returnRowingDistances()
-        default:
-            return []
-        }
-    }
     
-    func returnRunningDistances() -> [String] {
-        var array:[String] = []
-        for distance in ImperialDistance.allCases {
-            print(distance.displayText)
-            array.append(distance.displayText)
-        }
-        return array
-    }
     
-    func returnRowingDistances() -> [String] {
-        var array:[String] = []
-        for calories in CalorieDistance.allCases {
-            print(calories.displayText)
-            array.append(calories.displayText)
-        }
-        
-        for meters in MetricDistance.allCases {
-            print(meters.displayText)
-            array.append(meters.displayText)
-        }
-        
-        return array
-    }
 }

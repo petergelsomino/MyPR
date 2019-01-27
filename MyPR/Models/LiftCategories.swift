@@ -23,4 +23,70 @@ struct LiftObjectsArray {
         LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Hang Clean", "Power Clean", "Hang Squat Clean", "Squat Clean", "Hang Power Clean", "Muscle Clean"]),
         LiftObjects(liftSectionName: "Other", liftSectionObjects: ["Deadlift", "Stiff-Legged Deadlift","Clean & Jerk", "Power Clean & Jerk"])
     ]
+    
+    func populateObjectsArray(reading: String) -> [LiftObjects]  {
+        
+        switch reading {
+        case "lift":
+            break
+        case "endurance":
+            return getEnduranceObjectsArray()
+        default:
+            return getEnduranceObjectsArray()
+        }
+        return []
+    }
+    
+    func getEnduranceObjectsArray() -> [LiftObjects] {
+        var array:[LiftObjects] = []
+        for type in EnduranceType.allCases {
+            print(type.displayText)
+            let object = LiftObjects(liftSectionName: type.displayText, liftSectionObjects: returnSectionEndurances(enduranceType: type.displayText))
+            array.append(object)
+        }
+        return array
+    }
+    
+    func getliftsObjectsArray() -> [LiftObjects] {
+        var array:[LiftObjects] = []
+        for type in LiftType.allCases {
+            print(type.displayText)
+            let object = LiftObjects(liftSectionName: type.displayText, liftSectionObjects: returnSectionEndurances(enduranceType: type.displayText))
+            array.append(object)
+        }
+        return array
+    }
+    
+    func returnSectionEndurances(enduranceType: String) -> [String] {
+        switch enduranceType {
+        case "Run":
+            return returnRunningDistances()
+        case "Row":
+            return returnRowingDistances()
+        default:
+            return []
+        }
+    }
+    
+    func returnRunningDistances() -> [String] {
+        var array:[String] = []
+        for distance in ImperialDistance.allCases {
+            print(distance.displayText)
+            array.append(distance.displayText)
+        }
+        return array
+    }
+    
+    func returnRowingDistances() -> [String] {
+        var array:[String] = []
+        for calories in CalorieDistance.allCases {
+            print(calories.displayText)
+            array.append(calories.displayText)
+        }
+        for meters in MetricDistance.allCases {
+            print(meters.displayText)
+            array.append(meters.displayText)
+        }
+        return array
+    }
 }
