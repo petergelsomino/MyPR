@@ -10,82 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My PRs-->
-        <scene sceneID="fmn-M7-XtK">
-            <objects>
-                <tableViewController id="eB8-jX-blQ" customClass="DashboardTableViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cz9-Dy-gly">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardTableViewCell" rowHeight="66" id="m1B-vO-oHy" customClass="DashboardTableViewCell" customModule="MyPR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1B-vO-oHy" id="JAE-jz-w7d">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjk-0J-whE">
-                                            <rect key="frame" x="257" y="8" width="102" height="49.5"/>
-                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-r2-qq3">
-                                            <rect key="frame" x="16" y="8" width="225" height="49.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="225" id="zBa-Tu-LaZ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Xjk-0J-whE" firstAttribute="top" secondItem="JAE-jz-w7d" secondAttribute="top" constant="8" id="AkR-cu-xtr"/>
-                                        <constraint firstItem="Xjk-0J-whE" firstAttribute="leading" secondItem="xbV-r2-qq3" secondAttribute="trailing" constant="16" id="C7N-dx-mqL"/>
-                                        <constraint firstAttribute="trailing" secondItem="Xjk-0J-whE" secondAttribute="trailing" constant="16" id="JE9-K3-f8x"/>
-                                        <constraint firstAttribute="bottom" secondItem="xbV-r2-qq3" secondAttribute="bottom" constant="8" id="f0Y-IT-GRb"/>
-                                        <constraint firstItem="xbV-r2-qq3" firstAttribute="top" secondItem="JAE-jz-w7d" secondAttribute="top" constant="8" id="iwN-xC-n9H"/>
-                                        <constraint firstAttribute="bottom" secondItem="Xjk-0J-whE" secondAttribute="bottom" constant="8" id="qAC-nk-JBl"/>
-                                        <constraint firstItem="xbV-r2-qq3" firstAttribute="leading" secondItem="JAE-jz-w7d" secondAttribute="leading" constant="16" id="qbf-dO-ql0"/>
-                                        <constraint firstItem="Xjk-0J-whE" firstAttribute="leading" secondItem="xbV-r2-qq3" secondAttribute="trailing" constant="16" id="z10-g7-YjT"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="liftLabel" destination="xbV-r2-qq3" id="QcB-9D-YYO"/>
-                                    <outlet property="maxLiftLabel" destination="Xjk-0J-whE" id="k3C-R2-YPt"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="eB8-jX-blQ" id="syD-Ju-U6Q"/>
-                            <outlet property="delegate" destination="eB8-jX-blQ" id="VQK-Dy-TOC"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My PRs" id="0ef-uP-VEy">
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" style="plain" id="7if-mp-Gkd">
-                            <connections>
-                                <action selector="signOutButtonTapped:" destination="eB8-jX-blQ" id="pKO-wM-la4"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="5Se-nd-58w">
-                            <connections>
-                                <segue destination="HRa-mX-8DZ" kind="popoverPresentation" identifier="" popoverAnchorBarButtonItem="5Se-nd-58w" id="FFc-Dh-UdW">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="Yyh-H8-hII" kind="show" identifier="dashToPercentage" id="3Fy-ih-lb2"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sUp-qJ-25a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1020" y="-809.14542728635683"/>
-        </scene>
         <!--Record Lift-->
         <scene sceneID="nUo-6M-G0l">
             <objects>
@@ -396,7 +320,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLs-t1-YU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TXA-6K-fHO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2880.8000000000002" y="-813.64317841079469"/>
+            <point key="canvasLocation" x="3820" y="-813.64317841079469"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="BjL-YU-a7J">
+            <objects>
+                <viewController id="Z8B-eQ-EYi" customClass="DashboardViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rr2-HL-dnT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ucX-gs-2va">
+                                <rect key="frame" x="16" y="88" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Lifts"/>
+                                    <segment title="Endurance"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="Z8B-eQ-EYi" eventType="valueChanged" id="Huu-zt-dEE"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GLG-Sq-GkO">
+                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DashboardCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardCell" id="8gP-ow-be1" customClass="DashTableViewCell" customModule="MyPR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="DashTableViewCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gP-ow-be1" id="c3L-Nx-fg7" customClass="DashTableViewCell" customModule="MyPR" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-bT-eMu">
+                                                    <rect key="frame" x="31" y="15.5" width="313" height="17.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y5q-hd-EnB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="263.5" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rl-iw-xl8">
+                                                            <rect key="frame" x="263.5" y="0.0" width="49.5" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lbc-bT-eMu" firstAttribute="centerX" secondItem="c3L-Nx-fg7" secondAttribute="centerX" id="4Bs-3h-e2N"/>
+                                                <constraint firstItem="lbc-bT-eMu" firstAttribute="leading" secondItem="c3L-Nx-fg7" secondAttribute="leadingMargin" constant="16" id="FPA-p0-93S"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lbc-bT-eMu" secondAttribute="trailing" constant="16" id="JmX-Xj-4wS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lbc-bT-eMu" secondAttribute="bottom" id="rCD-2z-Uyq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="liftLabel" destination="y5q-hd-EnB" id="W8Z-zd-DV2"/>
+                                            <outlet property="maxLiftLabel" destination="1Rl-iw-xl8" id="XlX-MV-bGt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="leading" secondItem="rr2-HL-dnT" secondAttribute="leading" id="2T2-k3-sTh"/>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="top" secondItem="ucX-gs-2va" secondAttribute="bottom" constant="24" id="5bk-vo-SVd"/>
+                            <constraint firstItem="ucX-gs-2va" firstAttribute="leading" secondItem="9q3-ty-R3B" secondAttribute="leading" constant="16" id="8fw-TK-OxC"/>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="bottom" secondItem="9q3-ty-R3B" secondAttribute="bottom" id="9Ua-Zq-iSK"/>
+                            <constraint firstItem="9q3-ty-R3B" firstAttribute="trailing" secondItem="ucX-gs-2va" secondAttribute="trailing" constant="16" id="Iec-dW-n4C"/>
+                            <constraint firstItem="ucX-gs-2va" firstAttribute="top" secondItem="9q3-ty-R3B" secondAttribute="top" constant="24" id="JWX-Ju-ZFt"/>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="trailing" secondItem="9q3-ty-R3B" secondAttribute="trailing" id="Oti-Kp-63L"/>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="bottom" secondItem="9q3-ty-R3B" secondAttribute="bottom" id="XbJ-CY-7FQ"/>
+                            <constraint firstItem="GLG-Sq-GkO" firstAttribute="leading" secondItem="9q3-ty-R3B" secondAttribute="leading" id="hQg-f5-rNh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9q3-ty-R3B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qCr-VH-b6k">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="sjT-Ce-qJx">
+                            <connections>
+                                <action selector="signOutButtonTapped:" destination="Z8B-eQ-EYi" id="Fe2-Y3-3Oh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rHw-OR-FrW">
+                            <connections>
+                                <segue destination="HRa-mX-8DZ" kind="show" id="pmz-HA-sW2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dashboardSegmentedControl" destination="ucX-gs-2va" id="oFD-Kn-51F"/>
+                        <outlet property="dashboardTableView" destination="GLG-Sq-GkO" id="8Av-sd-u1L"/>
+                        <segue destination="Yyh-H8-hII" kind="show" identifier="dashToPercentage" id="hD1-KQ-60F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z12-r8-QMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096.8" y="-814.54272863568224"/>
         </scene>
         <!--Choose Lift Table View Controller-->
         <scene sceneID="edK-qx-Omz">
@@ -428,25 +450,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atn-Hh-m89" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xxa-Nz-tsm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3780" y="-808.24587706146929"/>
-        </scene>
-        <!--Nav View Controller-->
-        <scene sceneID="MQe-i5-rwj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tej-Bs-yOA" customClass="DBNavViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2IF-Aa-T2N">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="eB8-jX-blQ" kind="relationship" relationship="rootViewController" id="zSI-vH-9Et"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CL6-tV-7zJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="80.799999999999997" y="-809.14542728635683"/>
+            <point key="canvasLocation" x="4719.1999999999998" y="-808.24587706146929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J6I-6w-6dW">
@@ -464,7 +468,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EO1-p2-NDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935.2" y="-812.74362818590714"/>
+            <point key="canvasLocation" x="2225" y="-808"/>
         </scene>
         <!--Back Squat History-->
         <scene sceneID="Qvx-0V-1zT">
@@ -602,6 +606,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="fi3-EB-ub9" eventType="touchUpInside" id="Z8o-Yq-6ur"/>
+                                    <segue destination="k81-Cf-KfY" kind="show" identifier="loginToHome" id="VAq-a7-VF7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyPRs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6E-lQ-Bmk">
@@ -691,8 +696,7 @@
                         <outlet property="subTitleText2" destination="fxx-al-gCQ" id="GuY-mN-rro"/>
                         <outlet property="subTitleTextOne" destination="SZS-Uf-FgZ" id="Wrd-tJ-7lJ"/>
                         <outlet property="titleLabel" destination="x6E-lQ-Bmk" id="fIp-Lc-4WX"/>
-                        <segue destination="tej-Bs-yOA" kind="show" identifier="alreadyLoggedIn" id="2fI-Rm-1V0"/>
-                        <segue destination="tej-Bs-yOA" kind="show" identifier="loginToHome" id="QcE-00-0CT"/>
+                        <segue destination="k81-Cf-KfY" kind="show" identifier="alreadyLoggedIn" id="q8O-ga-94U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBN-lc-1QA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -766,6 +770,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="588-RX-oBY" eventType="touchUpInside" id="5mm-ul-nph"/>
+                                    <segue destination="k81-Cf-KfY" kind="show" id="eky-1T-4GS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEg-Dd-6IB">
@@ -816,7 +821,6 @@
                         <outlet property="registerButtonTextLabel" destination="0a6-0i-G5T" id="Tev-Xi-6MG"/>
                         <outlet property="retypePasswordTextField" destination="KeT-I1-UMV" id="Mpz-5Z-COb"/>
                         <outlet property="welcomeButtonTextLabel" destination="ZMt-Pn-ZN4" id="bfH-QF-fCU"/>
-                        <segue destination="tej-Bs-yOA" kind="show" identifier="signUpViaRegisterSegue" id="vHv-AI-DT9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jC-xy-DFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1249,13 +1253,32 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89e-YY-Gox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-52"/>
+            <point key="canvasLocation" x="1097" y="-12"/>
+        </scene>
+        <!--Nav View Controller-->
+        <scene sceneID="ZBf-Y3-X8a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k81-Cf-KfY" customClass="DBNavViewController" customModule="MyPR" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="YG1-sj-QDk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cfd-9U-OGo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z8B-eQ-EYi" kind="relationship" relationship="rootViewController" id="S2T-BR-L1P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryC-0G-x0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="-815"/>
         </scene>
     </scenes>
     <resources>
         <image name="tab-bar-percentage-small" width="12.943819999694824" height="12.943819999694824"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2fI-Rm-1V0"/>
+        <segue reference="VAq-a7-VF7"/>
     </inferredMetricsTieBreakers>
 </document>

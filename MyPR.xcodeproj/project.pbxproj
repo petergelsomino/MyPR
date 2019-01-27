@@ -13,6 +13,7 @@
 		AE6CB67521BDE9B200D4BAD9 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */; };
 		AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */; };
 		AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */; };
+		AEA0581621FB7A6F00369FFE /* DashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */; };
 		AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */; };
 		AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */; };
 		AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */; };
@@ -24,8 +25,6 @@
 		AEB7436C212F56EB007A3425 /* MyPRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7436B212F56EB007A3425 /* MyPRTests.swift */; };
 		AEB74377212F56EB007A3425 /* MyPRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74376212F56EB007A3425 /* MyPRUITests.swift */; };
 		AEB74385212F571C007A3425 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74384212F571B007A3425 /* Lift.swift */; };
-		AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */; };
-		AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */; };
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
 		AECE5E54215D784C00285155 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE5E53215D784C00285155 /* User.swift */; };
 		AED3DC1A21B43FFA0007107F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */; };
@@ -33,6 +32,7 @@
 		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
 		AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964121E7BC7B0013829B /* Endurance.swift */; };
 		AEEE964421E7C7B20013829B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964321E7C7B20013829B /* Strings.swift */; };
+		AEFE283121F7C5B200ADFF5B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */; };
 		CD0BAFEA8630526B223B0C3F /* Pods_MyPR_MyPRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AC196CB4AAEFBF9F496811 /* Pods_MyPR_MyPRTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +64,7 @@
 		AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPR.entitlements; sourceTree = "<group>"; };
 		AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftTabBarViewController.swift; sourceTree = "<group>"; };
 		AE7923E02149EA4A00234CAF /* PercentagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentagesViewController.swift; sourceTree = "<group>"; };
+		AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashTableViewCell.swift; sourceTree = "<group>"; };
 		AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryViewController.swift; sourceTree = "<group>"; };
 		AEA34325214897EC00B8BA61 /* LiftHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNavViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +82,6 @@
 		AEB74376212F56EB007A3425 /* MyPRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPRUITests.swift; sourceTree = "<group>"; };
 		AEB74378212F56EB007A3425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEB74384212F571B007A3425 /* Lift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
-		AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
-		AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
 		AECE5E53215D784C00285155 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AEEE964121E7BC7B0013829B /* Endurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endurance.swift; sourceTree = "<group>"; };
 		AEEE964321E7C7B20013829B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BF06F0EE6931886F829499C7 /* Pods-MyPR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.debug.xcconfig"; sourceTree = "<group>"; };
 		D2AD9BC168764F36A3531476 /* Pods-MyPR-MyPRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR-MyPRTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR-MyPRTests/Pods-MyPR-MyPRTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,9 +167,10 @@
 		AEA5B5D42159A64C002B9070 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				AEB74386212F57D3007A3425 /* DashboardTableViewController.swift */,
-				AEB74388212F58A3007A3425 /* DashboardTableViewCell.swift */,
+				AED488F921FB9ED80066F658 /* Endurance */,
 				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
+				AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */,
+				AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -266,6 +267,13 @@
 				AEA343212148973800B8BA61 /* LiftHistoryViewController.swift */,
 			);
 			path = LiftHistory;
+			sourceTree = "<group>";
+		};
+		AED488F921FB9ED80066F658 /* Endurance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endurance;
 			sourceTree = "<group>";
 		};
 		B668E42B1F9F84626C012652 /* Frameworks */ = {
@@ -540,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFE283121F7C5B200ADFF5B /* DashboardViewController.swift in Sources */,
 				AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */,
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
@@ -547,17 +556,16 @@
 				AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */,
 				AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */,
 				AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */,
-				AEB74387212F57D3007A3425 /* DashboardTableViewController.swift in Sources */,
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
 				AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */,
 				AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */,
 				AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */,
 				AEB115F521372C5400F49EAE /* ChooseLiftTableViewController.swift in Sources */,
 				AEB74385212F571C007A3425 /* Lift.swift in Sources */,
-				AEB74389212F58A3007A3425 /* DashboardTableViewCell.swift in Sources */,
 				AEAAB9A82193DAAB0016BE62 /* DBNavViewController.swift in Sources */,
 				AEEE964421E7C7B20013829B /* Strings.swift in Sources */,
 				AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */,
+				AEA0581621FB7A6F00369FFE /* DashTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

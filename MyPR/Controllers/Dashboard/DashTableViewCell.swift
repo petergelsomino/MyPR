@@ -1,14 +1,14 @@
 //
-//  DashboardTableViewCell.swift
+//  DashTableViewCell.swift
 //  MyPR
 //
-//  Created by Peter Gelsomino on 8/23/18.
-//  Copyright © 2018 PeteGels. All rights reserved.
+//  Created by Peter Gelsomino on 1/25/19.
+//  Copyright © 2019 PeteGels. All rights reserved.
 //
 
 import UIKit
 
-class DashboardTableViewCell: UITableViewCell {
+class DashTableViewCell: UITableViewCell {
 
     @IBOutlet weak var liftLabel: UILabel!
     @IBOutlet weak var maxLiftLabel: UILabel!

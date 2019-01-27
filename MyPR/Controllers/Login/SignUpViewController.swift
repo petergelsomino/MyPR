@@ -102,7 +102,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signUpViaRegisterSegue" {
             let nav = segue.destination as! UINavigationController
-            let svc = nav.topViewController as! DashboardTableViewController
+            let svc = nav.topViewController as! DashboardViewController
             svc.user = self.currentUser
         }
     }
