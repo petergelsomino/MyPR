@@ -43,7 +43,7 @@ struct LiftObjectsArray {
         var array:[LiftObjects] = []
         for type in LiftType.allCases {
             print(type.displayText)
-            let object = LiftObjects(liftSectionName: type.displayText, liftSectionObjects: returnSectionLifts(enduranceType: type.displayText))
+            let object = LiftObjects(liftSectionName: type.displayText, liftSectionObjects: returnSectionLifts(lift: type.displayText))
             array.append(object)
         }
         return array
@@ -60,8 +60,8 @@ struct LiftObjectsArray {
         }
     }
     
-    func returnSectionLifts(enduranceType: String) -> [String] {
-        switch enduranceType {
+    func returnSectionLifts(lift: String) -> [String] {
+        switch lift {
         case "Squat":
             return getSquatLifts()
         case "Snatch":

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4D74542A21389669E45BAB99 /* Pods_MyPR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315A8030421F46D09B4BD83 /* Pods_MyPR.framework */; };
-		AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */; };
 		AE2FA92B2143F9F600622DCD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2FA92A2143F9F600622DCD /* Extensions.swift */; };
 		AE6CB67521BDE9B200D4BAD9 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */; };
 		AE70C1D9214D2002007A3B92 /* LiftTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE70C1D8214D2002007A3B92 /* LiftTabBarViewController.swift */; };
@@ -59,7 +58,6 @@
 		63FDEFA992D8738382C4BF20 /* Pods-MyPR-MyPRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR-MyPRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR-MyPRTests/Pods-MyPR-MyPRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E54AE842689515BF8200725 /* Pods-MyPR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPR.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPR/Pods-MyPR.release.xcconfig"; sourceTree = "<group>"; };
 		93AC196CB4AAEFBF9F496811 /* Pods_MyPR_MyPRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPR_MyPRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftCategories.swift; sourceTree = "<group>"; };
 		AE2FA92A2143F9F600622DCD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AE6CB67421BDE9B200D4BAD9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyPR.entitlements; sourceTree = "<group>"; };
@@ -148,13 +146,12 @@
 			children = (
 				AEB74384212F571B007A3425 /* Lift.swift */,
 				AECE5E53215D784C00285155 /* User.swift */,
-				AE0C4DBB216D1DC100F99644 /* LiftCategories.swift */,
 				AEEE964121E7BC7B0013829B /* Endurance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AEA5B5D32159A63B002B9070 /* Controllers */ = {
+		AEA5B5D32159A63B002B9070 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AED3DC1C21B443DA0007107F /* LiftHistory */,
@@ -163,7 +160,7 @@
 				AEA5B5D42159A64C002B9070 /* Dashboard */,
 				AEA5B5D52159A69E002B9070 /* RecordLift */,
 			);
-			path = Controllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AEA5B5D42159A64C002B9070 /* Dashboard */ = {
@@ -173,7 +170,6 @@
 				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
 				AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */,
 				AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */,
-				AED4891F21FE84AE0066F658 /* DashboardController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -221,10 +217,11 @@
 		AEB74355212F56E9007A3425 /* MyPR */ = {
 			isa = PBXGroup;
 			children = (
+				AED4892121FE887D0066F658 /* Controllers */,
 				AE6CB67621BDFF8800D4BAD9 /* MyPR.entitlements */,
 				AE2FA9292143F9DF00622DCD /* Utils */,
 				AEA5B5D22159A60D002B9070 /* Models */,
-				AEA5B5D32159A63B002B9070 /* Controllers */,
+				AEA5B5D32159A63B002B9070 /* Views */,
 				AEB7435A212F56EA007A3425 /* Main.storyboard */,
 				AEB74356212F56E9007A3425 /* AppDelegate.swift */,
 				AEB7435D212F56EB007A3425 /* Assets.xcassets */,
@@ -277,6 +274,14 @@
 			children = (
 			);
 			path = Endurance;
+			sourceTree = "<group>";
+		};
+		AED4892121FE887D0066F658 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AED4891F21FE84AE0066F658 /* DashboardController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B668E42B1F9F84626C012652 /* Frameworks */ = {
@@ -557,7 +562,6 @@
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,
 				AECE5E54215D784C00285155 /* User.swift in Sources */,
-				AE0C4DBC216D1DC100F99644 /* LiftCategories.swift in Sources */,
 				AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */,
 				AEA343222148973800B8BA61 /* LiftHistoryViewController.swift in Sources */,
 				AEB74357212F56E9007A3425 /* AppDelegate.swift in Sources */,
