@@ -206,9 +206,4 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dashboardTableView.reloadData()
     }
     
-    
-    // PUTTING ENDURANCE STUFF HERE CAUSE IDK WHERE IT WILL GO NOW
-    
-    
-    
 }

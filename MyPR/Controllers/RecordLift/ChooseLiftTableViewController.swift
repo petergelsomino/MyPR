@@ -12,7 +12,7 @@ class ChooseLiftTableViewController: UITableViewController {
 
     // MARK: Variables
     var liftName = ""
-    var liftObjects = LiftObjectsArray()
+    var liftObjects = LiftObjectsArray().getliftsObjectsArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ChooseLiftTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return liftObjects.liftObjectsArray.count
+        return liftObjects.count
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -33,11 +33,11 @@ class ChooseLiftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return liftObjects.liftObjectsArray[section].liftSectionObjects.count
+        return liftObjects[section].liftSectionObjects.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return liftObjects.liftObjectsArray[section].liftSectionName
+        return liftObjects[section].liftSectionName
 
     }
     
@@ -60,7 +60,7 @@ class ChooseLiftTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordLiftCell", for: indexPath)
         
-        cell.textLabel?.text = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        cell.textLabel?.text = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
         cell.textLabel?.textColor = UIColor(hexString: "#F7C59F")
         cell.backgroundColor = UIColor(hexString: "#2E4057")
         cell.textLabel?.font = UIFont(name:"Copperplate", size: 20.0)
@@ -69,7 +69,7 @@ class ChooseLiftTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        liftName = liftObjects.liftObjectsArray[indexPath.section].liftSectionObjects[indexPath.row]
+        liftName = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
         performSegue(withIdentifier: "unwindToRecordLift", sender: self)
 
     }
