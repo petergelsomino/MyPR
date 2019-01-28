@@ -28,6 +28,7 @@
 		AEB7438D212F90E5007A3425 /* RecordLiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */; };
 		AECE5E54215D784C00285155 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE5E53215D784C00285155 /* User.swift */; };
 		AED3DC1A21B43FFA0007107F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */; };
+		AED4892021FE84AE0066F658 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED4891F21FE84AE0066F658 /* DashboardController.swift */; };
 		AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF85721558A3000AA78B7 /* LoginViewController.swift */; };
 		AEDEF85A215590C300AA78B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDEF859215590C300AA78B7 /* SignUpViewController.swift */; };
 		AEEE964221E7BC7B0013829B /* Endurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE964121E7BC7B0013829B /* Endurance.swift */; };
@@ -85,6 +86,7 @@
 		AEB7438C212F90E5007A3425 /* RecordLiftTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordLiftTableViewController.swift; sourceTree = "<group>"; };
 		AECE5E53215D784C00285155 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AED3DC1921B43FFA0007107F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AED4891F21FE84AE0066F658 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		AEDEF85721558A3000AA78B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDEF859215590C300AA78B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AEEE964121E7BC7B0013829B /* Endurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endurance.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				AEAAB9A72193DAAB0016BE62 /* DBNavViewController.swift */,
 				AEFE283021F7C5B200ADFF5B /* DashboardViewController.swift */,
 				AEA0581521FB7A6F00369FFE /* DashTableViewCell.swift */,
+				AED4891F21FE84AE0066F658 /* DashboardController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEFE283121F7C5B200ADFF5B /* DashboardViewController.swift in Sources */,
+				AED4892021FE84AE0066F658 /* DashboardController.swift in Sources */,
 				AEDEF85821558A3000AA78B7 /* LoginViewController.swift in Sources */,
 				AEA34326214897EC00B8BA61 /* LiftHistoryTableViewCell.swift in Sources */,
 				AE7923E12149EA4A00234CAF /* PercentagesViewController.swift in Sources */,

@@ -13,7 +13,7 @@ import FirebaseAuth
 import Firebase
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     // MARK: Variables
     var lifts = [Lift]()
     var liftTitle = ""
@@ -43,7 +43,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.dashboardTableView.backgroundColor = UIColor(hexString: "#2E4057")
         
         print("inside view did load")
@@ -76,14 +76,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         print("PETE Endurance Objects: \(enduranceObjects.count)")
         return liftObjects.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if dashboardSegmentedControl.selectedSegmentIndex == 0 {
             return liftObjects[section].liftSectionName
         }
-            return enduranceObjects[section].liftSectionName
+        return enduranceObjects[section].liftSectionName
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
@@ -107,17 +107,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.backgroundColor = UIColor(hexString: "#2E4057")
         cell.liftLabel.textColor = UIColor(hexString: "#F7C59F")
         cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
-
+        
         cell.liftLabel.text = liftcell
         cell.selectionStyle = .none
-
+        
         guard (self.user?.email) != nil else {
             cell.maxLiftLabel.text = "--"
             return cell
         }
-
+        
         let emailString = self.user?.email.replacingOccurrences(of: ".", with: "-")
-
+        
         getHighestliftValuePerCategory(emailString: emailString!, liftName: cell.liftLabel.text!) { (maxLift) -> () in
             if maxLift ==  0 {
                 cell.maxLiftLabel.text = "--"
@@ -176,7 +176,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 53
     }
-
+    
     @IBAction func unwindToDashboardLiftList(sender: UIStoryboardSegue) {
         dashboardTableView.reloadData()
     }
@@ -205,10 +205,5 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func loadList(notification: NSNotification){
         self.dashboardTableView.reloadData()
     }
-    
-    
-    // PUTTING ENDURANCE STUFF HERE CAUSE IDK WHERE IT WILL GO NOW
-    
-    
     
 }

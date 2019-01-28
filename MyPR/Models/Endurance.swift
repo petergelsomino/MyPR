@@ -60,7 +60,7 @@ enum EnduranceType: CaseIterable {
     case echoBike
     case bike
     case swim
-
+    
     var displayText: String {
         switch self {
         case .run: return .run

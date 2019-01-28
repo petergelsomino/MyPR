@@ -90,9 +90,9 @@ enum LiftType: CaseIterable  {
         case .other: return "Other"
         }
     }
+    
 }
-
-enum Squat {
+enum Squat: CaseIterable {
     case backSquat
     case frontSquat
     case hackSquat
@@ -120,9 +120,146 @@ enum Squat {
     }
 }
 
-//LiftObjects(liftSectionName: "Squat", liftSectionObjects: ["Back Squat", "Front Squat", "Hack Squat", "Overhead Squat", "Split Squat"]),
-//LiftObjects(liftSectionName: "Snatch", liftSectionObjects: ["Muscle Snatch", "Squat Snatch", "Hang Squat Snatch", "Power Snatch"]),
-//LiftObjects(liftSectionName: "Presses", liftSectionObjects: ["Bench Press", "Dumbell Bench Press",  "Incline Bench Press", "Dumbell Incline Bench Press", "Decline Bench Press", "Dumbell Floor Press", "Push Press", "Barbell Shoulder Press", "Dumbell Shoulder Press"]),
-//LiftObjects(liftSectionName: "Jerks", liftSectionObjects: ["Push Jerk", "Split Jerk", "Squat Jerk"]),
-//LiftObjects(liftSectionName: "Clean", liftSectionObjects: ["Hang Clean", "Power Clean", "Hang Squat Clean", "Squat Clean", "Hang Power Clean", "Muscle Clean"]),
-//LiftObjects(liftSectionName: "Other", liftSectionObjects: ["Deadlift", "Stiff-Legged Deadlift","Clean & Jerk", "Power Clean & Jerk"])
+enum Snatch: CaseIterable {
+    case muscleSnatch
+    case hangSquatSnatch
+    case powerSnatch
+    case squatSnatch
+    
+    var displayText: String {
+        switch self {
+        case .muscleSnatch: return "Muscle Snatch"
+        case .squatSnatch: return "Squat Snatch"
+        case .hangSquatSnatch: return "Hang Squat Snatch"
+        case .powerSnatch: return "Power Snatch"
+        }
+    }
+    
+    var databaseKey: String {
+        switch self {
+        case .muscleSnatch: return "musclesnatch"
+        case .squatSnatch: return "squatsnatch"
+        case .hangSquatSnatch: return "hangsquatsnatch"
+        case .powerSnatch: return "powersnatch"
+        }
+    }
+}
+
+enum Press: CaseIterable {
+    case benchPress
+    case dumbbellBenchPress
+    case inclineBenchPress
+    case dumbellInclineBenchPress
+    case declineBenchPress
+    case dumbellFloorPress
+    case pushPress
+    case barbellStrictPress
+    case dumbbellStrictPress
+    
+    var displayText: String {
+        switch self {
+        case .benchPress: return "Bench Press"
+        case .dumbbellBenchPress: return "Dumbbell Bench Press"
+        case .dumbellInclineBenchPress: return "Dumbbell Incline Bench Press"
+        case .declineBenchPress: return "Decline Bench Press"
+        case .dumbellFloorPress: return "Dumbbell Floor Press"
+        case .pushPress: return "Push Press"
+        case .barbellStrictPress: return "Barbell Strict Press"
+        case .dumbbellStrictPress: return "Dumbbell Strict Press"
+        case .inclineBenchPress: return "Incline Bench Press"
+        }
+    }
+    
+    var databaseKey: String {
+        switch self {
+        case .benchPress: return "benchpress"
+        case .dumbbellBenchPress: return "dumbbellbenchpress"
+        case .dumbellInclineBenchPress: return "dumbbellinclinebenchpress"
+        case .declineBenchPress: return "declinebenchpress"
+        case .dumbellFloorPress: return "dumbbellfloorpress"
+        case .pushPress: return "pushpress"
+        case .barbellStrictPress: return "barbellshoulderpress"
+        case .dumbbellStrictPress: return "dumbellshoulderpress"
+        case .inclineBenchPress: return "inclinebenchpress"
+        }
+    }
+}
+
+enum Jerk: CaseIterable {
+    case pushJerk
+    case splitJerk
+    case squatJerk
+    
+    var displayText: String {
+        switch self {
+        case .pushJerk: return "Push Jerk"
+        case .splitJerk: return "Split Jerk"
+        case .squatJerk: return "Squat Jerk"
+        }
+    }
+    
+    var databaseKey: String {
+        switch self {
+        case .pushJerk: return "pushjerk"
+        case .splitJerk: return "splitjerk"
+        case .squatJerk: return "squatjerk"
+        }
+    }
+}
+
+enum Clean: CaseIterable {
+    case hangClean
+    case powerClean
+    case hangSquatClean
+    case squatClean
+    case hangPowerClean
+    case muscleClean
+    
+    var displayText: String {
+        switch self {
+        case .hangClean: return "Hang Clean"
+        case .powerClean: return "Power Clean"
+        case .hangSquatClean: return "Hang Squat Clean"
+        case .squatClean: return "Squat Clean"
+        case .hangPowerClean: return "Hang Power Clean"
+        case .muscleClean: return "Muscle Clean"
+        }
+    }
+    
+    var databaseKey: String {
+        switch self {
+        case .hangClean: return "hangclean"
+        case .powerClean: return "powerclean"
+        case .hangSquatClean: return "hangsquatclean"
+        case .squatClean: return "squatclean"
+        case .hangPowerClean: return "hangpowerclean"
+        case .muscleClean: return "muscleclean"
+        }
+    }
+}
+
+enum Other: CaseIterable {
+    case deadlift
+    case stiffLeggedDeadlift
+    case cleanJerk
+    case powerCleanJerk
+    
+    var displayText: String {
+        switch self {
+        case .deadlift: return "Deadlift"
+        case .stiffLeggedDeadlift: return "Stiff-Legged Deadlift"
+        case .cleanJerk: return "Clean & Jerk"
+        case .powerCleanJerk: return "Power Clean & Jerk"
+        }
+    }
+    
+    var databaseKey: String {
+        switch self {
+        case .deadlift: return "deadlift"
+        case .stiffLeggedDeadlift: return "stiff-leggeddeadlift"
+        case .cleanJerk: return "clean&jerk"
+        case .powerCleanJerk: return "powerclean&jerk"
+        }
+    }
+}
+
