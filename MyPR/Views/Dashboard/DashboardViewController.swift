@@ -73,7 +73,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("PETE Endurance Objects: \(enduranceObjects.count)")
         return liftObjects.count
     }
     
@@ -81,7 +80,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         if dashboardSegmentedControl.selectedSegmentIndex == 0 {
             return liftObjects[section].liftSectionName
         }
-        return enduranceObjects[section].liftSectionName
+            return enduranceObjects[section].liftSectionName
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -100,7 +99,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("inside cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardCell", for: indexPath) as! DashTableViewCell
-        let liftcell = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
         
         cell.liftLabel.contentMode = .scaleToFill
         cell.liftLabel.numberOfLines = 0
@@ -108,25 +106,34 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.liftLabel.textColor = UIColor(hexString: "#F7C59F")
         cell.maxLiftLabel.textColor = UIColor(hexString: "#F7C59F")
         
-        cell.liftLabel.text = liftcell
         cell.selectionStyle = .none
         
-        guard (self.user?.email) != nil else {
-            cell.maxLiftLabel.text = "--"
+        if dashboardSegmentedControl.selectedSegmentIndex == 0 {
+            
+            let liftcell = liftObjects[indexPath.section].liftSectionObjects[indexPath.row]
+            cell.liftLabel.text = liftcell
+            
+            guard (self.user?.email) != nil else {
+                cell.maxLiftLabel.text = "--"
+                return cell
+            }
+            
+            let emailString = self.user?.email.replacingOccurrences(of: ".", with: "-")
+            
+            getHighestliftValuePerCategory(emailString: emailString!, liftName: cell.liftLabel.text!) { (maxLift) -> () in
+                if maxLift ==  0 {
+                    cell.maxLiftLabel.text = "--"
+                }
+                else {
+                    cell.maxLiftLabel.text = String(maxLift)
+                }
+            }
+            return cell
+        } else {
+            print("HIIIiiiiiiiiii")
             return cell
         }
-        
-        let emailString = self.user?.email.replacingOccurrences(of: ".", with: "-")
-        
-        getHighestliftValuePerCategory(emailString: emailString!, liftName: cell.liftLabel.text!) { (maxLift) -> () in
-            if maxLift ==  0 {
-                cell.maxLiftLabel.text = "--"
-            }
-            else {
-                cell.maxLiftLabel.text = String(maxLift)
-            }
-        }
-        return cell
+
     }
     
     // Send title information to percentages view controller
